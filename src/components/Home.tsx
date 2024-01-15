@@ -2,7 +2,11 @@ import { ChangeEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-  const [name, setName] = useState<string>('');
+  const [name, setName] = useState<string>(() => {
+    const getFromLs: string | null = localStorage.getItem('name');
+    const initialValue = JSON.parse(getFromLs || 'null') || '';
+    return initialValue || '';
+  });
   console.log(name);
   const navigate = useNavigate();
 
