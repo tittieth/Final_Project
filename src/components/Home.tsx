@@ -7,6 +7,7 @@ const Home = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', name);
+    localStorage.setItem('name', JSON.stringify(name));
   };
 
   return (
