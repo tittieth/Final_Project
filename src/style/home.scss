@@ -1,9 +1,13 @@
 @import '../style/variables.scss';
 
 .home-wrapper {
-  background-color: orange;
   display: flex;
   flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-family: 'Modak', system-ui;
+  }
 
   form {
     display: flex;
