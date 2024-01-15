@@ -19,13 +19,15 @@ const Home = () => {
 
   return (
     <div className="home-wrapper">
-      <h1>Superklädhjälten</h1>
-      <img src="/weather-icons/shower-rain.png" alt="rain cloud" width={200} height={200} />
+      <h1>
+        <span>S</span>uperklädhjälten
+      </h1>
+      <img className="rain-cloud" src="/weather-icons/shower-rain.png" alt="rain cloud" width={200} height={200} />
       <img
         src="/img/3d-boy-in-superhero-cape-running.png"
         alt="3d boy in superhero cape running"
-        width={270}
-        height={300}
+        width={200}
+        height={230}
       />
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Skriv in ditt namn och tryck på start:</label>
