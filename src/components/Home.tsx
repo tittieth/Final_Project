@@ -20,16 +20,19 @@ const Home = () => {
   return (
     <div>
       <h1>Superklädhjälten</h1>
+      <img src="/public/weather-icons/shower-rain.png" alt="rain cloud" />
+      <img src="/public/img/boy-with-umbrella.png" alt="boy with umbrella" />
       <form onSubmit={handleSubmit}>
-        <label>
-          Name:
-          <input
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
-            type="text"
-            name="name"
-            value={name}
-          />
-        </label>
+        <label htmlFor="name">Skriv in ditt namn och tryck på start:</label>
+        <input
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
+          type="text"
+          name="name"
+          value={name}
+          placeholder="Ditt namn"
+          id="name"
+        />
+
         <button type="submit">Start</button>
       </form>
     </div>
