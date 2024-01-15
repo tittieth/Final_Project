@@ -18,7 +18,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className="home-wrapper">
       <h1>Superklädhjälten</h1>
       <img src="/public/weather-icons/shower-rain.png" alt="rain cloud" />
       <img src="/public/img/boy-with-umbrella.png" alt="boy with umbrella" />

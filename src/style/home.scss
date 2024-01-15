@@ -1,0 +1,12 @@
+@import '../style/variables.scss';
+
+.home-wrapper {
+  background-color: orange;
+  display: flex;
+  flex-direction: column;
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+}
