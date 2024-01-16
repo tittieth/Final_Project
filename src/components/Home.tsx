@@ -24,19 +24,20 @@ const Home = () => {
       </h1>
       <img className="rain-cloud" src="/weather-icons/shower-rain.png" alt="rain cloud" width={200} height={200} />
       <img
+        className="running-boy"
         src="/img/3d-boy-in-superhero-cape-running.png"
         alt="3d boy in superhero cape running"
-        width={200}
+        width={230}
         height={230}
       />
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Skriv in ditt namn och tryck på start:</label>
+        <label htmlFor="name">Skriv in ditt namn:</label>
         <input
           onChange={(e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
           type="text"
           name="name"
           value={name}
-          placeholder="Ditt namn"
+          placeholder="Namn.."
           id="name"
         />
 
