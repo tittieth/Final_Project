@@ -61,9 +61,11 @@ const Weather = () => {
           <h1>Hej {user}</h1>
           <WeatherCard weatherData={weatherData}></WeatherCard>
           <h3>Du behöver klä på dig: </h3>
-          {getRecommendedClothes().map((item: IClothingItem) => (
-            <ClothingDisplay key={item.id} clothingItem={item}></ClothingDisplay>
-          ))}
+          <div className="wrapper">
+            {getRecommendedClothes().map((item: IClothingItem) => (
+              <ClothingDisplay key={item.id} clothingItem={item}></ClothingDisplay>
+            ))}
+          </div>
         </div>
       </>
     );
