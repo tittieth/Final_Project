@@ -1,6 +1,11 @@
 @import '../style/variables.scss';
 
 .card-wrapper {
+  width: 80%;
+  margin: auto;
   background-color: rgba($navy, 0.35);
   color: $almost-white;
+  border-radius: 20px;
+  border: 1px solid $navy;
+  padding: 0.4em;
 }
