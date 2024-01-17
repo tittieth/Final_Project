@@ -37,6 +37,7 @@ const Weather = () => {
       <div>
         <h1>Hej {user}</h1>
         <WeatherCard weatherData={weatherData}></WeatherCard>
+        <h3>Du behöver klä på dig: </h3>
       </div>
     );
 };
