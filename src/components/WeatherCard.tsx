@@ -21,8 +21,8 @@ const WeatherCard = ({ weatherData }: Props) => {
       <img
         src={`/public/weather-icons/${customIcon}`}
         alt={weatherData.weather[0].description}
-        height={50}
-        width={50}
+        height={60}
+        width={60}
       />
       {/* <img
         src={`https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`}
