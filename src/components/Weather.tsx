@@ -4,6 +4,8 @@ import WeatherService from '../services/WeatherService';
 import WeatherCard from './WeatherCard';
 
 const Weather = () => {
+  const user = JSON.parse(localStorage.getItem('name') ?? 'null');
+  console.log(user);
   const [weatherData, setWeatherData] = useState<IWeatherData | null>(null);
 
   useEffect(() => {
@@ -33,6 +35,7 @@ const Weather = () => {
   if (weatherData)
     return (
       <div>
+        <h1>Hej {user}</h1>
         <WeatherCard weatherData={weatherData}></WeatherCard>
       </div>
     );
