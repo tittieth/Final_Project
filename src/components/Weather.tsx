@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import IWeatherData from '../models/IWeather';
 import WeatherService from '../services/WeatherService';
+import WeatherCard from './WeatherCard';
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState<IWeatherData | null>(null);
@@ -16,6 +17,7 @@ const Weather = () => {
 
             const data = await WeatherService.getWeather(latitude, longitude);
             console.log(data);
+            setWeatherData(data);
           },
           (error) => {
             console.error(error);
@@ -27,7 +29,13 @@ const Weather = () => {
     };
     fetchData();
   }, []);
-  return <div>Weather</div>;
+
+  if (weatherData)
+    return (
+      <div>
+        <WeatherCard weatherData={weatherData}></WeatherCard>
+      </div>
+    );
 };
 
 export default Weather;
