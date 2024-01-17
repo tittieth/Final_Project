@@ -5,6 +5,9 @@ type Props = {
 };
 
 const WeatherCard = ({ weatherData }: Props) => {
+  const user = JSON.parse(localStorage.getItem('name') ?? 'null');
+  console.log(user);
+
   const customIconMappings: Record<string, string> = {
     Snow: 'snow.png',
     Clear: 'clear-sky.png',
@@ -17,6 +20,7 @@ const WeatherCard = ({ weatherData }: Props) => {
 
   return (
     <div>
+      <h1>Hej {user}</h1>
       <h1>Väder i {weatherData.name}</h1>
       <h2>{weatherData.weather[0].main}</h2>
       <img
