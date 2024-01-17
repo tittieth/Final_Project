@@ -16,20 +16,19 @@ const WeatherCard = ({ weatherData }: Props) => {
   const customIcon = customIconMappings[weatherData.weather[0].main];
 
   return (
-    <div>
-      <h1>Väder i {weatherData.name}</h1>
-      <h2>{weatherData.weather[0].main}</h2>
+    <div className="card-wrapper">
+      <h1>Vädret i {weatherData.name}</h1>
       <img
         src={`/public/weather-icons/${customIcon}`}
         alt={weatherData.weather[0].description}
         height={50}
         width={50}
       />
-      <img
+      {/* <img
         src={`https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`}
         alt={weatherData.weather[0].description}
-      />
-      <p>Temperatur: {Math.round(weatherData.main.temp)} °C</p>
+      /> */}
+      <p>{Math.round(weatherData.main.temp)} °C</p>
     </div>
   );
 };
