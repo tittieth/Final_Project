@@ -1,4 +1,8 @@
+@import './style/vendor/reset';
 @import './style/home.scss';
+@import './style/weathercard.scss';
+@import './style/clothingdisplay.scss';
+@import './style/weather.scss';
 
 #root {
   max-width: 1280px;
