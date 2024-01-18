@@ -15,6 +15,9 @@ const Contact = () => {
     message: '',
   });
   const [confirmation, setConfirmation] = useState(false);
+  const [nameError, setNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [messageError, setMessageError] = useState(false);
 
   console.log(formValues.name + formValues.email + formValues.message);
 
@@ -22,6 +25,30 @@ const Contact = () => {
     const { name, value } = e.target;
     setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
   };
+
+  const validateForm = (field: string) => {
+    if (field === 'name') {
+      if (/^[a-zåäöA-ZÅÄÖ]+$/.test(formValues.name)) {
+        setNameError(false);
+      } else {
+        setNameError(true);
+      }
+    } else if (field === 'email') {
+      if (/^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/.test(formValues.email)) {
+        setEmailError(false);
+      } else {
+        setEmailError(true);
+      }
+    } else if (field === 'message') {
+      if (formValues.message === '') {
+        setMessageError(true);
+      } else {
+        setMessageError(false);
+      }
+    }
+  };
+
+  console.log(nameError, emailError, messageError);
 
   const submitForm = async (formData: FormValues) => {
     try {
@@ -56,17 +83,34 @@ const Contact = () => {
       <form onSubmit={handleSubmit}>
         <label className="input-wrapper">
           Namn:
-          <input type="text" name="name" value={formValues.name} onChange={handleChange} />
+          <input
+            type="text"
+            name="name"
+            value={formValues.name}
+            onChange={handleChange}
+            onBlur={() => validateForm('name')}
+          />
         </label>
 
         <label className="input-wrapper">
           Mejladress:
-          <input type="email" name="email" value={formValues.email} onChange={handleChange} />
+          <input
+            type="email"
+            name="email"
+            value={formValues.email}
+            onChange={handleChange}
+            onBlur={() => validateForm('email')}
+          />
         </label>
 
         <label className="input-wrapper">
           Meddelande:
-          <textarea name="message" value={formValues.message} onChange={handleChange} />
+          <textarea
+            name="message"
+            value={formValues.message}
+            onChange={handleChange}
+            onBlur={() => validateForm('message')}
+          />
         </label>
 
         <div>
