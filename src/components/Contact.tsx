@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
+import ConfirmationModal from './ConfirmationModal';
 
 type FormValues = {
   name: string;
@@ -13,6 +14,7 @@ const Contact = () => {
     email: '',
     message: '',
   });
+  const [confirmation, setConfirmation] = useState(false);
 
   console.log(formValues.name + formValues.email + formValues.message);
 
@@ -44,6 +46,7 @@ const Contact = () => {
       email: '',
       message: '',
     });
+    setConfirmation(true);
   };
 
   return (
@@ -71,6 +74,7 @@ const Contact = () => {
           <button type="submit">Skicka</button>
         </div>
       </form>
+      {confirmation && <ConfirmationModal setConfirmation={setConfirmation}></ConfirmationModal>}
     </>
   );
 };
