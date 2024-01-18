@@ -1,7 +1,7 @@
 @import '../style/variables.scss';
 
 .wrapper {
-  background-color: purple;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
