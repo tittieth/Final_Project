@@ -57,11 +57,11 @@ const Weather = () => {
   if (weatherData)
     return (
       <>
-        <div>
-          <h1>Hej {user}</h1>
+        <div className="wrapper">
+          <h1>Hej {user}!</h1>
           <WeatherCard weatherData={weatherData}></WeatherCard>
           <h3>Du behöver klä på dig: </h3>
-          <div className="wrapper">
+          <div className="clothing-cards-wrapper">
             {getRecommendedClothes().map((item: IClothingItem) => (
               <ClothingDisplay key={item.id} clothingItem={item}></ClothingDisplay>
             ))}
