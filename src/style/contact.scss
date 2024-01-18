@@ -39,4 +39,14 @@
       padding: 0.5em 1.8em;
     }
   }
+  .contact-img-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    .contact-img {
+      margin-right: 20px;
+      margin-top: -20px;
+    }
+  }
 }
