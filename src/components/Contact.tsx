@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react';
 
 type FormValues = {
@@ -20,9 +21,29 @@ const Contact = () => {
     setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
   };
 
+  const submitForm = async (formData: FormValues) => {
+    try {
+      const response = await axios.post('https://formsubmit.co/ajax/tittie.thomasson@medieinstitutet.se', {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      });
+      return response;
+    } catch (error) {
+      console.error(error);
+      throw new Error('Något gick fel. Försök igen');
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    await submitForm(formValues);
+    console.log('Form submitted:', formValues);
+  };
+
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label>
             Namn:
