@@ -50,34 +50,31 @@ const Contact = () => {
   };
 
   return (
-    <>
+    <div className="contact-wrapper">
       <h1>Kontakt</h1>
       <p>Har du frågor eller funderingar? Skicka oss ett meddelande!</p>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>
-            Namn:
-            <input type="text" name="name" value={formValues.name} onChange={handleChange} />
-          </label>
-        </div>
-        <div>
-          <label>
-            Mejladress:
-            <input type="email" name="email" value={formValues.email} onChange={handleChange} />
-          </label>
-        </div>
-        <div>
-          <label>
-            Meddelande:
-            <textarea name="message" value={formValues.message} onChange={handleChange} />
-          </label>
-        </div>
+        <label className="input-wrapper">
+          Namn:
+          <input type="text" name="name" value={formValues.name} onChange={handleChange} />
+        </label>
+
+        <label className="input-wrapper">
+          Mejladress:
+          <input type="email" name="email" value={formValues.email} onChange={handleChange} />
+        </label>
+
+        <label className="input-wrapper">
+          Meddelande:
+          <textarea name="message" value={formValues.message} onChange={handleChange} />
+        </label>
+
         <div>
           <button type="submit">Skicka</button>
         </div>
       </form>
       {confirmation && <ConfirmationModal setConfirmation={setConfirmation}></ConfirmationModal>}
-    </>
+    </div>
   );
 };
 

@@ -1,0 +1,42 @@
+@import '../style/variables.scss';
+
+.contact-wrapper {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    margin: 1em;
+  }
+
+  form {
+    background-color: rgba($almost-white, 0.35);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5em;
+    width: 90%;
+    border-radius: 5px;
+
+    .input-wrapper {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      padding: 0.3em;
+
+      input,
+      textarea {
+        border: none;
+        border-radius: 5px;
+        background-color: $almost-white;
+        padding: 0.3em 4em;
+      }
+    }
+
+    button {
+      margin: 0.6em;
+      padding: 0.5em 1.8em;
+    }
+  }
+}
