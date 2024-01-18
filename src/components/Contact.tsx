@@ -51,6 +51,8 @@ const Contact = () => {
 
   return (
     <>
+      <h1>Kontakt</h1>
+      <p>Har du frågor eller funderingar? Skicka oss ett meddelande!</p>
       <form onSubmit={handleSubmit}>
         <div>
           <label>
