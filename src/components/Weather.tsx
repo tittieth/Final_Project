@@ -5,13 +5,16 @@ import WeatherCard from './WeatherCard';
 import IClothingItem from '../models/IClothing';
 import clothesData from '../data/Clothes';
 import ClothingDisplay from './ClothingDisplay';
+import { useNavigate } from 'react-router-dom';
 
 const Weather = () => {
   const user = JSON.parse(localStorage.getItem('name') ?? 'null');
-  console.log(user);
   const [weatherData, setWeatherData] = useState<IWeatherData | null>(null);
   const [temperature, setTemperature] = useState<number>(0);
   const [weatherCondition, setWeatherCondition] = useState<string>('');
+  const [checkedClothes, setCheckedClothes] = useState<number>(0);
+  const [totalClothes, setTotalClothes] = useState<number>(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,6 +42,10 @@ const Weather = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    setTotalClothes(getRecommendedClothes().length);
+  }, [weatherCondition, temperature]);
+
   const getRecommendedClothes = (): IClothingItem[] => {
     const recommendedClothes = clothesData.filter((item: IClothingItem) => {
       const conditionMatch =
@@ -46,13 +53,25 @@ const Weather = () => {
           ? item.weatherCondition === weatherCondition
           : item.weatherCondition.includes(weatherCondition);
 
-      const temperatureMatch = item.temperature === undefined || item.temperature(temperature);
+      const temperatureMatch = item.temperature !== undefined && item.temperature(temperature);
 
       return conditionMatch && temperatureMatch;
     });
 
     return recommendedClothes;
   };
+
+  const handleClothesChange = (checked: boolean) => {
+    setCheckedClothes((prevCheckedClothes) => (checked ? prevCheckedClothes + 1 : prevCheckedClothes));
+  };
+  console.log(checkedClothes + 'from handleclothes');
+  console.log(totalClothes + 'from handleclothes');
+
+  useEffect(() => {
+    if (checkedClothes > 0 && checkedClothes === totalClothes) {
+      navigate('/goodjob');
+    }
+  }, [checkedClothes, totalClothes]);
 
   if (weatherData)
     return (
@@ -63,7 +82,11 @@ const Weather = () => {
           <h3>Du behöver klä på dig: </h3>
           <div className="clothing-cards-wrapper">
             {getRecommendedClothes().map((item: IClothingItem) => (
-              <ClothingDisplay key={item.id} clothingItem={item}></ClothingDisplay>
+              <ClothingDisplay
+                key={item.id}
+                clothingItem={item}
+                onClothesChange={handleClothesChange}
+              ></ClothingDisplay>
             ))}
           </div>
         </div>
