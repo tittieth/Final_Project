@@ -73,6 +73,13 @@ const Contact = () => {
           <button type="submit">Skicka</button>
         </div>
       </form>
+      <img
+        className="contact-img"
+        src="/public/img/casual-life-3d-young-woman-in-headphones-sitting-in-front-of-laptop-and-waving.png"
+        alt="3d woman in headphones sitting in front of laptop"
+        width={130}
+        height={130}
+      />
       {confirmation && <ConfirmationModal setConfirmation={setConfirmation}></ConfirmationModal>}
     </div>
   );
