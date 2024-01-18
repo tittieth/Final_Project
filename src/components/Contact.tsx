@@ -39,6 +39,11 @@ const Contact = () => {
     e.preventDefault();
     await submitForm(formValues);
     console.log('Form submitted:', formValues);
+    setFormValues({
+      name: '',
+      email: '',
+      message: '',
+    });
   };
 
   return (
