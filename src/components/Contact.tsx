@@ -60,17 +60,37 @@ const Contact = () => {
       <form onSubmit={handleSubmit}>
         <label className="input-wrapper">
           Namn:
-          <input type="text" name="name" value={values.name} onChange={handleChange} onBlur={handleBlur} />
+          <input
+            type="text"
+            name="name"
+            value={values.name}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={errors.name ? 'input-error' : ''}
+          />
         </label>
 
         <label className="input-wrapper">
           Mejladress:
-          <input type="email" name="email" value={values.email} onChange={handleChange} onBlur={handleBlur} />
+          <input
+            type="email"
+            name="email"
+            value={values.email}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={errors.email ? 'input-error' : ''}
+          />
         </label>
 
         <label className="input-wrapper">
           Meddelande:
-          <textarea name="message" value={values.message} onChange={handleChange} onBlur={handleBlur} />
+          <textarea
+            name="message"
+            value={values.message}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={errors.message ? 'input-error' : ''}
+          />
         </label>
 
         <div>

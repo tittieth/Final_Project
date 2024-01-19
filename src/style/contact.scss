@@ -32,6 +32,11 @@
         background-color: $almost-white;
         padding: 0.3em 4em;
       }
+
+      input.input-error,
+      textarea.input-error {
+        border: 1px solid #fc8181;
+      }
     }
 
     button {
