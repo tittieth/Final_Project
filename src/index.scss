@@ -48,3 +48,7 @@ button:focus,
 button:focus-visible {
   outline: 1px solid $navy;
 }
+
+button:disabled {
+  background-color: lightgray;
+}

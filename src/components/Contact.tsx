@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ConfirmationModal from './ConfirmationModal';
 import submitForm from '../services/ContactFormService';
 import { useFormik } from 'formik';
 import { validationSchema } from '../models/ValidationSchema';
+import { FormikHelpers } from 'formik';
 
 export type FormValues = {
   name: string;
@@ -10,12 +11,16 @@ export type FormValues = {
   message: string;
 };
 
-const onSubmit = () => {
-  console.log('form submitted');
-};
-
 const Contact = () => {
-  const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik<FormValues>({
+  const onSubmit = async (values: FormValues, actions: FormikHelpers<FormValues>) => {
+    console.log(values);
+    console.log(actions);
+    await submitForm(values);
+    console.log('Form submitted:', values);
+    setConfirmation(true);
+    actions.resetForm();
+  };
+  const { values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit } = useFormik<FormValues>({
     initialValues: {
       name: '',
       email: '',
@@ -28,30 +33,7 @@ const Contact = () => {
   console.log(values);
   console.log('errors' + errors);
 
-  // const [formValues, setFormValues] = useState<FormValues>({
-  //   name: '',
-  //   email: '',
-  //   message: '',
-  // });
-  // const [confirmation, setConfirmation] = useState(false);
-
-  // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-  //   const { name, value } = e.target;
-  //   setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
-  // };
-
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-
-  //   await submitForm(formValues);
-  //   console.log('Form submitted:', formValues);
-  //   setConfirmation(true);
-  //   setFormValues({
-  //     name: '',
-  //     email: '',
-  //     message: '',
-  //   });
-  // };
+  const [confirmation, setConfirmation] = useState(false);
 
   return (
     <div className="contact-wrapper">
@@ -97,7 +79,9 @@ const Contact = () => {
         {errors.message && touched.message && <p className="error">{errors.message}</p>}
 
         <div>
-          <button type="submit">Skicka</button>
+          <button type="submit" disabled={isSubmitting}>
+            Skicka
+          </button>
         </div>
       </form>
       <div className="contact-img-wrapper">
@@ -109,7 +93,7 @@ const Contact = () => {
           height={130}
         />
       </div>
-      {/* {confirmation && <ConfirmationModal setConfirmation={setConfirmation}></ConfirmationModal>} */}
+      {confirmation && <ConfirmationModal setConfirmation={setConfirmation}></ConfirmationModal>}
     </div>
   );
 };
