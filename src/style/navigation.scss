@@ -1,5 +1,16 @@
 @import '../style/variables.scss';
 
 nav {
+  width: 100%;
   background-color: pink;
+  display: flex;
+  justify-content: center;
+
+  ul {
+    width: 100%;
+    background-color: green;
+    display: flex;
+    justify-content: space-around;
+    padding-inline-start: 0;
+  }
 }
