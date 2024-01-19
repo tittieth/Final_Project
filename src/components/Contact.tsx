@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ConfirmationModal from './ConfirmationModal';
 import submitForm from '../services/ContactFormService';
+import { useFormik } from 'formik';
+import { validationSchema } from '../models/ValidationSchema';
 
 export type FormValues = {
   name: string;
@@ -8,59 +10,48 @@ export type FormValues = {
   message: string;
 };
 
+const onSubmit = () => {
+  console.log('form submitted');
+};
+
 const Contact = () => {
-  const [formValues, setFormValues] = useState<FormValues>({
-    name: '',
-    email: '',
-    message: '',
-  });
-  const [confirmation, setConfirmation] = useState(false);
-  const [nameError, setNameError] = useState(false);
-  const [emailError, setEmailError] = useState(false);
-  const [messageError, setMessageError] = useState(false);
-
-  console.log(formValues.name + formValues.email + formValues.message);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
-  };
-
-  const validateForm = (field: string) => {
-    if (field === 'name') {
-      if (/^[a-zåäöA-ZÅÄÖ]+$/.test(formValues.name)) {
-        setNameError(false);
-      } else {
-        setNameError(true);
-      }
-    } else if (field === 'email') {
-      if (/^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/.test(formValues.email)) {
-        setEmailError(false);
-      } else {
-        setEmailError(true);
-      }
-    } else if (field === 'message') {
-      if (formValues.message === '') {
-        setMessageError(true);
-      } else {
-        setMessageError(false);
-      }
-    }
-  };
-
-  console.log(nameError, emailError, messageError);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    await submitForm(formValues);
-    console.log('Form submitted:', formValues);
-    setFormValues({
+  const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik<FormValues>({
+    initialValues: {
       name: '',
       email: '',
       message: '',
-    });
-    setConfirmation(true);
-  };
+    },
+    validationSchema: validationSchema,
+    onSubmit,
+  });
+
+  console.log(values);
+  console.log('errors' + errors);
+
+  // const [formValues, setFormValues] = useState<FormValues>({
+  //   name: '',
+  //   email: '',
+  //   message: '',
+  // });
+  // const [confirmation, setConfirmation] = useState(false);
+
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  //   const { name, value } = e.target;
+  //   setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
+  // };
+
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+
+  //   await submitForm(formValues);
+  //   console.log('Form submitted:', formValues);
+  //   setConfirmation(true);
+  //   setFormValues({
+  //     name: '',
+  //     email: '',
+  //     message: '',
+  //   });
+  // };
 
   return (
     <div className="contact-wrapper">
@@ -69,34 +60,17 @@ const Contact = () => {
       <form onSubmit={handleSubmit}>
         <label className="input-wrapper">
           Namn:
-          <input
-            type="text"
-            name="name"
-            value={formValues.name}
-            onChange={handleChange}
-            onBlur={() => validateForm('name')}
-          />
+          <input type="text" name="name" value={values.name} onChange={handleChange} onBlur={handleBlur} />
         </label>
 
         <label className="input-wrapper">
           Mejladress:
-          <input
-            type="email"
-            name="email"
-            value={formValues.email}
-            onChange={handleChange}
-            onBlur={() => validateForm('email')}
-          />
+          <input type="email" name="email" value={values.email} onChange={handleChange} onBlur={handleBlur} />
         </label>
 
         <label className="input-wrapper">
           Meddelande:
-          <textarea
-            name="message"
-            value={formValues.message}
-            onChange={handleChange}
-            onBlur={() => validateForm('message')}
-          />
+          <textarea name="message" value={values.message} onChange={handleChange} onBlur={handleBlur} />
         </label>
 
         <div>
@@ -112,7 +86,7 @@ const Contact = () => {
           height={130}
         />
       </div>
-      {confirmation && <ConfirmationModal setConfirmation={setConfirmation}></ConfirmationModal>}
+      {/* {confirmation && <ConfirmationModal setConfirmation={setConfirmation}></ConfirmationModal>} */}
     </div>
   );
 };
