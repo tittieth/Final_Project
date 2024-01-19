@@ -1,7 +1,10 @@
 import * as yup from 'yup';
 
 export const validationSchema = yup.object().shape({
-  name: yup.string().required('Namn är obligatoriskt'),
-  email: yup.string().email('Fyll i en giltig mejl').required('email är obligatorisk'),
-  message: yup.string().required('Du måste skriva ett meddelande'),
+  name: yup.string().required('Detta fält är obligatoriskt. Vänligen fyll i det'),
+  email: yup
+    .string()
+    .email('Ogiltig e-postadress. Vänligen ange en giltig e-postadress')
+    .required('Detta fält är obligatoriskt. Vänligen fyll i det'),
+  message: yup.string().required('Detta fält är obligatoriskt. Vänligen fyll i det'),
 });
