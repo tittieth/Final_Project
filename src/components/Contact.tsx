@@ -56,7 +56,7 @@ const Contact = () => {
   return (
     <div className="contact-wrapper">
       <h1>Kontakt</h1>
-      <p>Har du frågor eller funderingar? Skicka oss ett meddelande!</p>
+      <p className="contact-info">Har du frågor eller funderingar? Skicka oss ett meddelande!</p>
       <form onSubmit={handleSubmit}>
         <label className="input-wrapper">
           Namn:
@@ -69,6 +69,7 @@ const Contact = () => {
             className={errors.name && touched.name ? 'input-error' : ''}
           />
         </label>
+        <div className="error">{errors.name && touched.name && <p>{errors.name}</p>}</div>
 
         <label className="input-wrapper">
           Mejladress:
@@ -81,6 +82,7 @@ const Contact = () => {
             className={errors.email && touched.email ? 'input-error' : ''}
           />
         </label>
+        {errors.email && touched.email && <p className="error">{errors.email}</p>}
 
         <label className="input-wrapper">
           Meddelande:
@@ -92,6 +94,7 @@ const Contact = () => {
             className={errors.message && touched.message ? 'input-error' : ''}
           />
         </label>
+        {errors.message && touched.message && <p className="error">{errors.message}</p>}
 
         <div>
           <button type="submit">Skicka</button>
