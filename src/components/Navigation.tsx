@@ -8,17 +8,17 @@ const Navigation = () => {
       <ul>
         <li>
           <Link to="/">
-            <FontAwesomeIcon icon={faHouse} />
+            <FontAwesomeIcon icon={faHouse} className="nav-icon" />
           </Link>
         </li>
         <li>
           <Link to="/weather">
-            <FontAwesomeIcon icon={faCloudSun} />
+            <FontAwesomeIcon icon={faCloudSun} className="nav-icon" />
           </Link>
         </li>
         <li>
           <Link to="/contact">
-            <FontAwesomeIcon icon={faEnvelope} />
+            <FontAwesomeIcon icon={faEnvelope} className="nav-icon" />
           </Link>
         </li>
       </ul>
