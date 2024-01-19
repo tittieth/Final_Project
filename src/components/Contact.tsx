@@ -15,7 +15,7 @@ const onSubmit = () => {
 };
 
 const Contact = () => {
-  const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik<FormValues>({
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik<FormValues>({
     initialValues: {
       name: '',
       email: '',
@@ -66,7 +66,7 @@ const Contact = () => {
             value={values.name}
             onChange={handleChange}
             onBlur={handleBlur}
-            className={errors.name ? 'input-error' : ''}
+            className={errors.name && touched.name ? 'input-error' : ''}
           />
         </label>
 
@@ -78,7 +78,7 @@ const Contact = () => {
             value={values.email}
             onChange={handleChange}
             onBlur={handleBlur}
-            className={errors.email ? 'input-error' : ''}
+            className={errors.email && touched.email ? 'input-error' : ''}
           />
         </label>
 
@@ -89,7 +89,7 @@ const Contact = () => {
             value={values.message}
             onChange={handleChange}
             onBlur={handleBlur}
-            className={errors.message ? 'input-error' : ''}
+            className={errors.message && touched.message ? 'input-error' : ''}
           />
         </label>
 
