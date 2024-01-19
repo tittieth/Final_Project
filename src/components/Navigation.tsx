@@ -1,17 +1,25 @@
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouse, faCloudSun, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const Navigation = () => {
   return (
     <nav>
       <ul>
         <li>
-          <Link to="/">Hem</Link>
+          <Link to="/">
+            <FontAwesomeIcon icon={faHouse} />
+          </Link>
         </li>
         <li>
-          <Link to="/weather">Väder</Link>
+          <Link to="/weather">
+            <FontAwesomeIcon icon={faCloudSun} />
+          </Link>
         </li>
         <li>
-          <Link to="/contact">Kontakt</Link>
+          <Link to="/contact">
+            <FontAwesomeIcon icon={faEnvelope} />
+          </Link>
         </li>
       </ul>
     </nav>
