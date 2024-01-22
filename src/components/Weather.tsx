@@ -77,10 +77,10 @@ const Weather = () => {
 
   if (!weatherData) {
     return (
-      <>
+      <div className="loadingspinner-wrapper">
         <p>Använder mina superkrafter för att hämta vädret...</p>
         <LoadingSpinner></LoadingSpinner>
-      </>
+      </div>
     );
   }
 
