@@ -7,6 +7,7 @@ import clothesData from '../data/Clothes';
 import ClothingDisplay from './ClothingDisplay';
 import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
+import LoadingSpinner from './LoadingSpinner';
 
 const Weather = () => {
   const user = JSON.parse(localStorage.getItem('name') ?? 'null');
@@ -73,6 +74,15 @@ const Weather = () => {
       navigate('/goodjob');
     }
   }, [checkedClothes, totalClothes]);
+
+  if (!weatherData) {
+    return (
+      <>
+        <p>Använder mina superkrafter för att hämta vädret...</p>
+        <LoadingSpinner></LoadingSpinner>
+      </>
+    );
+  }
 
   if (weatherData)
     return (
