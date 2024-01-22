@@ -3,4 +3,8 @@
 .error-wrapper {
   display: flex;
   flex-direction: column;
+
+  :nth-child(3) {
+    background-color: rgba($almost-white, 0.35);
+  }
 }
