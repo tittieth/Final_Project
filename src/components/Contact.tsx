@@ -89,7 +89,7 @@ const Contact = () => {
         <div className="contact-img-wrapper">
           <img
             className="contact-img"
-            src="/public/img/casual-life-3d-young-woman-in-headphones-sitting-in-front-of-laptop-and-waving.png"
+            src="/img/casual-life-3d-young-woman-in-headphones-sitting-in-front-of-laptop-and-waving.png"
             alt="3d woman in headphones sitting in front of laptop"
             width={130}
             height={130}
