@@ -4,9 +4,9 @@ const GoodJob = () => {
   console.log(name);
 
   return (
-    <div>
+    <div className="goodjob-wrapper">
       <h1>Bra jobbat {name}!</h1>
-      <div>
+      <div className="star-wrapper">
         <img
           src="/public/img/casual-life-3d-yellow-star.png"
           alt="casual-life-3d-yellow-star.png"
