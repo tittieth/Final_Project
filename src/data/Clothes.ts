@@ -19,7 +19,7 @@ const clothesData: IClothingItem[] = [
     id: 3,
     description: 'Overall',
     image: '/public/img-clothes/overall.webp',
-    weatherCondition: 'snow',
+    weatherCondition: ['snow', 'clear'],
     temperature: (temperature: number) => temperature <= 0,
   },
   {
@@ -33,7 +33,7 @@ const clothesData: IClothingItem[] = [
     id: 5,
     description: 'Tjocka Vantar',
     image: '/public/img-clothes/vintervantar.webp',
-    weatherCondition: ['clouds', 'snow'],
+    weatherCondition: ['clouds', 'snow', 'clear'],
     temperature: (temperature: number) => temperature < 5,
   },
   {
