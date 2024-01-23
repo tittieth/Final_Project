@@ -11,6 +11,7 @@ import LoadingSpinner from './LoadingSpinner';
 const Weather = () => {
   const user = JSON.parse(localStorage.getItem('name') ?? 'null');
   const [weatherData, setWeatherData] = useState<IWeatherData | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const [temperature, setTemperature] = useState<number>(0);
   const [weatherCondition, setWeatherCondition] = useState<string>('');
   const [checkedClothes, setCheckedClothes] = useState<number>(0);
@@ -34,10 +35,12 @@ const Weather = () => {
           },
           (error) => {
             console.error(error);
+            setError('Kunde inte hämta din platsdata');
           }
         );
       } catch (error) {
         console.log('error' + error);
+        setError('Fel vid hämtning av väder');
       }
     };
     fetchData();
@@ -73,6 +76,10 @@ const Weather = () => {
       navigate('/goodjob');
     }
   }, [checkedClothes, totalClothes]);
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   if (!weatherData) {
     return (
