@@ -4,7 +4,6 @@ import submitForm from '../services/ContactFormService';
 import { useFormik } from 'formik';
 import { validationSchema } from '../models/ValidationSchema';
 import { FormikHelpers } from 'formik';
-import Navigation from './Navigation';
 
 export type FormValues = {
   name: string;
@@ -97,7 +96,6 @@ const Contact = () => {
         </div>
         {confirmation && <ConfirmationModal setConfirmation={setConfirmation}></ConfirmationModal>}
       </div>
-      <Navigation></Navigation>
     </>
   );
 };

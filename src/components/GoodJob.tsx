@@ -1,5 +1,3 @@
-import Navigation from './Navigation';
-
 const GoodJob = () => {
   const name = JSON.parse(localStorage.getItem('name') || '');
 
@@ -37,7 +35,6 @@ const GoodJob = () => {
         </div>
         <p>Nu är du redo att gå ut! Ha så kul!</p>
       </div>
-      <Navigation></Navigation>
     </>
   );
 };

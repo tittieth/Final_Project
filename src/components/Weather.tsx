@@ -6,7 +6,6 @@ import IClothingItem from '../models/IClothing';
 import clothesData from '../data/Clothes';
 import ClothingDisplay from './ClothingDisplay';
 import { useNavigate } from 'react-router-dom';
-import Navigation from './Navigation';
 import LoadingSpinner from './LoadingSpinner';
 
 const Weather = () => {
@@ -101,7 +100,6 @@ const Weather = () => {
             ))}
           </div>
         </div>
-        <Navigation></Navigation>
       </>
     );
 };
