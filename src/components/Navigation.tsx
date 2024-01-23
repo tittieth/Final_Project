@@ -7,17 +7,17 @@ const Navigation = () => {
     <nav>
       <ul>
         <li>
-          <Link to="/">
+          <Link to="/" aria-label="Home">
             <FontAwesomeIcon icon={faHouse} className="nav-icon" />
           </Link>
         </li>
         <li>
-          <Link to="/weather">
+          <Link to="/weather" aria-label="Weather">
             <FontAwesomeIcon icon={faCloudSun} className="nav-icon" />
           </Link>
         </li>
         <li>
-          <Link to="/contact">
+          <Link to="/contact" aria-label="Contact">
             <FontAwesomeIcon icon={faEnvelope} className="nav-icon" />
           </Link>
         </li>
