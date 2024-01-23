@@ -19,18 +19,21 @@ const GoodJob = () => {
             alt="casual-life-3d-yellow-star.png"
             width={50}
             height={50}
+            loading="lazy"
           />
           <img
             src="/public/img/casual-life-3d-yellow-star.png"
             alt="casual-life-3d-yellow-star.png"
             width={50}
             height={50}
+            loading="lazy"
           />
           <img
             src="/public/img/casual-life-3d-yellow-star.png"
             alt="casual-life-3d-yellow-star.png"
             width={50}
             height={50}
+            loading="lazy"
           />
         </div>
         <p>Nu är du redo att gå ut! Ha så kul!</p>

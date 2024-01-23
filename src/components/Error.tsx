@@ -3,7 +3,13 @@ const Error = () => {
     <div className="error-wrapper">
       <h1>Vilse?</h1>
       <div>
-        <img src="/img/boy-with-umbrella.png" alt="3d boy walking with an umbrella" width={150} height={250} />
+        <img
+          src="/img/boy-with-umbrella.png"
+          alt="3d boy walking with an umbrella"
+          width={150}
+          height={250}
+          loading="lazy"
+        />
       </div>
       <div>
         <p>

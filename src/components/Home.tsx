@@ -29,6 +29,7 @@ const Home = () => {
         alt="3d boy in superhero cape running"
         width={230}
         height={230}
+        loading="lazy"
       />
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Skriv in ditt namn:</label>

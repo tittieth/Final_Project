@@ -92,6 +92,7 @@ const Contact = () => {
             alt="3d woman in headphones sitting in front of laptop"
             width={130}
             height={130}
+            loading="lazy"
           />
         </div>
         {confirmation && <ConfirmationModal setConfirmation={setConfirmation}></ConfirmationModal>}
