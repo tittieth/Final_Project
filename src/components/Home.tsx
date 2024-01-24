@@ -1,21 +1,33 @@
-import { ChangeEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useFormik } from 'formik';
+import { FormikHelpers } from 'formik';
+import { validationSchemaName } from '../models/ValidationSchema';
+
+type FormValues = {
+  name: string;
+};
 
 const Home = () => {
-  const [name, setName] = useState<string>(() => {
-    const getFromLs: string | null = localStorage.getItem('name');
-    const initialValue = JSON.parse(getFromLs || 'null') || '';
-    return initialValue || '';
-  });
-  console.log(name);
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', name);
-    localStorage.setItem('name', JSON.stringify(name));
+  const getFromLs: string | null = localStorage.getItem('name');
+  const initialValue = JSON.parse(getFromLs || 'null') || '';
+
+  const onSubmit = async (values: FormValues, actions: FormikHelpers<FormValues>) => {
+    console.log(values);
+    console.log(actions);
+    console.log('Form submitted:', values.name);
+    localStorage.setItem('name', JSON.stringify(values.name));
     navigate('/weather');
   };
+
+  const { values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit } = useFormik<FormValues>({
+    initialValues: {
+      name: initialValue,
+    },
+    validationSchema: validationSchemaName,
+    onSubmit,
+  });
 
   return (
     <div className="home-wrapper">
@@ -34,15 +46,20 @@ const Home = () => {
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Skriv in ditt namn:</label>
         <input
-          onChange={(e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          value={values.name}
           type="text"
           name="name"
-          value={name}
           placeholder="Namn.."
           id="name"
+          className={touched.name && errors.name ? 'input-error' : ''}
         />
+        {touched.name && errors.name && <div className="error">{errors.name}</div>}
 
-        <button type="submit">Start</button>
+        <button type="submit" disabled={isSubmitting}>
+          Start
+        </button>
       </form>
     </div>
   );

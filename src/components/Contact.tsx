@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ConfirmationModal from './ConfirmationModal';
 import submitForm from '../services/ContactFormService';
 import { useFormik } from 'formik';
-import { validationSchema } from '../models/ValidationSchema';
+import { validationSchemaContactForm } from '../models/ValidationSchema';
 import { FormikHelpers } from 'formik';
 
 export type FormValues = {
@@ -26,7 +26,7 @@ const Contact = () => {
       email: '',
       message: '',
     },
-    validationSchema: validationSchema,
+    validationSchema: validationSchemaContactForm,
     onSubmit,
   });
 
