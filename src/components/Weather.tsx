@@ -9,7 +9,9 @@ import { useNavigate } from 'react-router-dom';
 import LoadingSpinner from './LoadingSpinner';
 
 const Weather = () => {
-  const user = JSON.parse(localStorage.getItem('name') ?? 'null');
+  const userFromLs = JSON.parse(localStorage.getItem('name') ?? 'null');
+  const user = userFromLs.charAt(0).toUpperCase() + userFromLs.slice(1);
+
   const [weatherData, setWeatherData] = useState<IWeatherData | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [temperature, setTemperature] = useState<number>(0);
