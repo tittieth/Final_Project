@@ -9,19 +9,14 @@ const GoodJob = () => {
         <h1>Bra jobbat {name}!</h1>
         <div className="star-wrapper">
           <img
+            className="star-one"
             src="/public/img/casual-life-3d-yellow-star.png"
             alt="casual-life-3d-yellow-star.png"
             width={50}
             height={50}
           />
           <img
-            src="/public/img/casual-life-3d-yellow-star.png"
-            alt="casual-life-3d-yellow-star.png"
-            width={50}
-            height={50}
-            loading="lazy"
-          />
-          <img
+            className="star-two"
             src="/public/img/casual-life-3d-yellow-star.png"
             alt="casual-life-3d-yellow-star.png"
             width={50}
@@ -29,6 +24,15 @@ const GoodJob = () => {
             loading="lazy"
           />
           <img
+            className="star-three"
+            src="/public/img/casual-life-3d-yellow-star.png"
+            alt="casual-life-3d-yellow-star.png"
+            width={50}
+            height={50}
+            loading="lazy"
+          />
+          <img
+            className="star-four"
             src="/public/img/casual-life-3d-yellow-star.png"
             alt="casual-life-3d-yellow-star.png"
             width={50}
