@@ -12,6 +12,7 @@ export type FormValues = {
 };
 
 const Contact = () => {
+  const [confirmation, setConfirmation] = useState(false);
   const onSubmit = async (values: FormValues, actions: FormikHelpers<FormValues>) => {
     console.log(values);
     console.log(actions);
@@ -32,8 +33,6 @@ const Contact = () => {
 
   console.log(values);
   console.log('errors' + errors);
-
-  const [confirmation, setConfirmation] = useState(false);
 
   return (
     <>
