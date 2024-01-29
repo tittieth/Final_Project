@@ -1,5 +1,5 @@
 const GoodJob = () => {
-  const name = JSON.parse(localStorage.getItem('name') || '');
+  const name = localStorage.getItem('name') || '';
 
   console.log(name);
 
