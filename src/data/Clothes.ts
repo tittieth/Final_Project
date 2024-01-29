@@ -6,7 +6,7 @@ const clothesData: IClothingItem[] = [
     description: 'Regnkläder',
     image: '/public/img-clothes/regnkläder.webp',
     weatherCondition: 'rain',
-    temperature: (temperature: number) => temperature <= 1 && temperature < 20,
+    temperature: (temperature: number) => temperature > 1 && temperature < 15,
   },
   {
     id: 2,
@@ -19,14 +19,14 @@ const clothesData: IClothingItem[] = [
     id: 3,
     description: 'Overall',
     image: '/public/img-clothes/overall.webp',
-    weatherCondition: ['snow', 'clear'],
-    temperature: (temperature: number) => temperature <= 0,
+    weatherCondition: ['snow', 'clear', 'clouds'],
+    temperature: (temperature: number) => temperature <= 4,
   },
   {
     id: 4,
     description: 'Sandal',
     image: '/public/img-clothes/sandal.jpg',
-    weatherCondition: 'clear',
+    weatherCondition: ['clear', 'clouds'],
     temperature: (temperature: number) => temperature >= 18,
   },
   {
@@ -68,8 +68,8 @@ const clothesData: IClothingItem[] = [
     id: 10,
     description: 'kängor',
     image: '/public/img-clothes/skor.webp',
-    weatherCondition: ['clouds', 'snow'],
-    temperature: (temperature: number) => temperature > -5 && temperature < 18,
+    weatherCondition: ['clouds', 'snow', 'clear'],
+    temperature: (temperature: number) => temperature > -5 && temperature < 15,
   },
   {
     id: 11,
@@ -96,7 +96,7 @@ const clothesData: IClothingItem[] = [
     id: 14,
     description: 'Överdragsbyxor',
     image: '/public/img-clothes/överdragsbyxor.webp',
-    weatherCondition: ['clouds', 'snow', 'rain'],
+    weatherCondition: ['clouds', 'snow'],
     temperature: (temperature: number) => temperature >= 5 && temperature < 10,
   },
 ];
