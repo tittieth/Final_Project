@@ -33,3 +33,30 @@ describe('weather page', () => {
     cy.get('.clothing-cards-wrapper').children().should('have.length.greaterThan', 0);
   });
 });
+
+describe('good job page', () => {
+  it('successfully loads', () => {
+    cy.visit('/goodjob');
+    cy.get('h1').should('contain', 'Bra jobbat');
+    cy.get('.star-wrapper').children().should('have.length', 4);
+  });
+});
+
+describe('contact form', () => {
+  it('successfully loads', () => {
+    cy.visit('/contact');
+  });
+  it('Should show title', () => {
+    cy.visit('/contact');
+    cy.get('h1').should('have.text', 'Kontakt');
+  });
+  it('Should submit if form is valid', () => {
+    cy.visit('/contact');
+    cy.get('input[name="name"]').type('John');
+    cy.get('input[name="email"]').type('johndoe@email.com');
+    cy.get('textarea[name="message"]').type('Test message');
+    cy.get('button[type="submit"]').click();
+    // cy.wait(2000)
+    // cy.get('.confirmation-modal').children().should('have.text', 'Tack för ditt mejl! Vi kommer att höra av oss.')
+  });
+});
