@@ -37,12 +37,16 @@ const Weather = () => {
           },
           (error) => {
             console.error(error);
-            setError('Kunde inte hämta din platsdata');
+            setError(
+              'Oops! Det verkar som att vi behöver tillgång till din plats för att ge dig den bästa upplevelsen. För att fortsätta, snälla tillåt platsåtkomst i din webbläsare. Klicka på det lilla hänglåset bredvid webbadressen och välj "Tillåt platsåtkomst". Tack!'
+            );
           }
         );
       } catch (error) {
         console.log('error' + error);
-        setError('Fel vid hämtning av väder');
+        setError(
+          'Oops! Vi kunde tyvärr inte hämta aktuell väderinformation just nu. Det kan bero på tillfälliga tekniska problem. Vänligen försök igen senare. Om problemet kvarstår, kontrollera din internetanslutning eller så kan det vara ett tillfälligt fel med vårt tjänsteleverantör. Vi ber om ursäkt för eventuella besvär.'
+        );
       }
     };
     fetchData();
@@ -80,7 +84,11 @@ const Weather = () => {
   }, [checkedClothes, totalClothes]);
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return (
+      <div className="error-message">
+        <p>{error}</p>
+      </div>
+    );
   }
 
   if (!weatherData) {
