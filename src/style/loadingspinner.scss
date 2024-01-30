@@ -46,3 +46,9 @@
     animation: logo-spin infinite 20s linear;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .loadingspinner-wrapper {
+    margin: auto;
+  }
+}

@@ -23,6 +23,16 @@
   border-radius: 5px;
 }
 
+@media screen and (min-width: 768px) {
+  .wrapper {
+    margin: auto;
+
+    h1 {
+      margin: 0 0 20px;
+    }
+  }
+}
+
 @media screen and (min-width: 992px) {
   .wrapper {
     .clothing-cards-wrapper {
