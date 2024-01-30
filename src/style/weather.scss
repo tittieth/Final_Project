@@ -22,3 +22,11 @@
   padding: 2em;
   border-radius: 5px;
 }
+
+@media screen and (min-width: 992px) {
+  .wrapper {
+    .clothing-cards-wrapper {
+      flex-wrap: nowrap;
+    }
+  }
+}
