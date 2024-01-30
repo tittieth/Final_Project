@@ -5,6 +5,13 @@ import { faHouse, faCloudSun, faEnvelope } from '@fortawesome/free-solid-svg-ico
 const Navigation = () => {
   return (
     <nav>
+      <img
+        className="logo"
+        src="/img/logo-superkladhjalten.webp"
+        alt="a cloud with the text superklädhjälten"
+        width={90}
+        height={50}
+      />
       <ul>
         <li>
           <Link to="/" aria-label="Home">
