@@ -1,6 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact, faSass, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
+import typeScriptIcon from '/tech-icons/typescript-svgrepo-com.svg';
+import openWeatherIcon from '/tech-icons/openweather-svgrepo-com.svg';
+import reactRouterIcon from '/tech-icons/react-router-logo-png-transparent.png';
+import viteIcon from '/tech-icons/vite-svgrepo-com.svg';
+import axiosIcon from '/tech-icons/Axios.svg';
+import formikIcon from '/tech-icons/emojipng.com-10246054.png';
 
 const AboutPage = () => {
   return (
@@ -22,8 +28,10 @@ const AboutPage = () => {
             <p>React</p>
           </li>
           <li>
+            <span>
+              <img src={typeScriptIcon} alt="" />
+            </span>
             <p>TypeScript</p>
-            <span></span>
           </li>
           <li>
             <span>
@@ -32,22 +40,24 @@ const AboutPage = () => {
             <p>Scss</p>
           </li>
           <li>
+            <img src={viteIcon} alt="" />
             <p>Vite</p>
           </li>
           <li>
+            <img src={reactRouterIcon} alt="" />
             <p>React Router</p>
           </li>
           <li>
+            <img src={formikIcon} alt="" />
             <p>Formik</p>
           </li>
           <li>
+            <img src={axiosIcon} alt="" />
             <p>Axios</p>
           </li>
           <li>
+            <img src={openWeatherIcon} alt="" />
             <p>OpenWeatherMap Api</p>
-          </li>
-          <li>
-            <p>localStorage</p>
           </li>
         </ul>
       </section>
