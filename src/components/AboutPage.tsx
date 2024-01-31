@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact, faSass } from '@fortawesome/free-brands-svg-icons';
+import { faReact, faSass, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 
 const AboutPage = () => {
   return (
@@ -8,28 +9,27 @@ const AboutPage = () => {
         <h2>Om projektet</h2>
         <p>
           Superklädhjälten är en interaktiv webbapplikation som hjälper barn att välja rätt kläder baserat på aktuella
-          väderförhållanden. Den är skapad inom ramen av mitt examensarbete som front end developer på Medieinstitutet -
-          2024
+          väderförhållanden. Den är skapad inom ramen av mitt examensarbete som front end developer på Medieinstitutet.
         </p>
       </section>
       <section>
         <h2>Tech stack</h2>
         <ul>
           <li>
-            <p>React</p>
             <span>
               <FontAwesomeIcon icon={faReact} />
             </span>
+            <p>React</p>
           </li>
           <li>
             <p>TypeScript</p>
             <span></span>
           </li>
           <li>
-            <p>Scss</p>
             <span>
               <FontAwesomeIcon icon={faSass} />
             </span>
+            <p>Scss</p>
           </li>
           <li>
             <p>Vite</p>
@@ -50,6 +50,17 @@ const AboutPage = () => {
             <p>localStorage</p>
           </li>
         </ul>
+      </section>
+      <section>
+        <h2>Övrigt</h2>
+        <p>Läs mer om projektet och ta del av koden på min</p>
+        <Link to="https://github.com/tittieth/Final_Project">GitHub</Link>
+      </section>
+      <section>
+        <h2>Tittie Thomasson</h2>
+        <Link to="https://www.linkedin.com/in/tittie-thomasson/">
+          <FontAwesomeIcon icon={faLinkedin} />
+        </Link>
       </section>
     </div>
   );
