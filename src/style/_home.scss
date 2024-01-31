@@ -10,7 +10,7 @@
     font-family: 'Modak', system-ui;
 
     span {
-      font-size: 5.4rem;
+      font-size: clamp(5.4rem, 4.1455rem + 6.6909vw, 10rem);
     }
   }
 
@@ -63,6 +63,20 @@
 
 @media screen and (min-width: 768px) {
   .home-wrapper {
+    width: 70%;
     margin: auto;
+
+    .rain-cloud {
+      width: 250px;
+      height: 250px;
+      margin-left: 80px;
+      margin-top: -120px;
+      margin-bottom: 25px;
+      z-index: -1;
+    }
+
+    .running-boy {
+      margin-right: 25px;
+    }
   }
 }

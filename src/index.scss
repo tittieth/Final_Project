@@ -69,13 +69,13 @@ button:disabled {
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 0.8182rem + 3.6364vw, 4rem);
 }
 
 h2 {
-  font-size: 1.3rem;
+  font-size: clamp(1.25rem, 0.5682rem + 3.6364vw, 3.75rem);
 }
 
 p {
-  font-size: 1rem;
+  font-size: clamp(1rem, 0.6591rem + 1.8182vw, 2.25rem);
 }
