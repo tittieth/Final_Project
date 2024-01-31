@@ -64,11 +64,13 @@ const AboutPage = () => {
       <section>
         <h2>Övrigt</h2>
         <p>Läs mer om projektet och ta del av koden på min</p>
-        <Link to="https://github.com/tittieth/Final_Project">GitHub</Link>
+        <Link to="https://github.com/tittieth/Final_Project" target="_blank">
+          GitHub
+        </Link>
       </section>
       <section>
         <h2>Tittie Thomasson</h2>
-        <Link to="https://www.linkedin.com/in/tittie-thomasson/">
+        <Link to="https://www.linkedin.com/in/tittie-thomasson/" target="_blank">
           <FontAwesomeIcon icon={faLinkedin} className="tech-icon" />
         </Link>
       </section>
