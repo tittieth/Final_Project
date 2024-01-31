@@ -14,3 +14,15 @@
   border: 1px solid $navy;
   padding: 0.5em;
 }
+
+@media screen and (min-width: 700px) {
+  .card-wrapper {
+    width: 70%;
+    min-height: 280px;
+
+    .weather-icon {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}

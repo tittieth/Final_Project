@@ -69,7 +69,7 @@ const AboutPage = () => {
         </Link>
       </section>
       <section>
-        <h2>Tittie Thomasson</h2>
+        <h2>Utvecklad av Tittie Thomasson</h2>
         <Link to="https://www.linkedin.com/in/tittie-thomasson/" target="_blank">
           <FontAwesomeIcon icon={faLinkedin} className="tech-icon" />
         </Link>
