@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faCloudSun, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faCloudSun, faEnvelope, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 
 const Navigation = () => {
   return (
@@ -26,6 +26,11 @@ const Navigation = () => {
         <li>
           <Link to="/contact" aria-label="Contact">
             <FontAwesomeIcon icon={faEnvelope} className="nav-icon" />
+          </Link>
+        </li>
+        <li>
+          <Link to="/info" aria-label="Info">
+            <FontAwesomeIcon icon={faCircleInfo} className="nav-icon" />
           </Link>
         </li>
       </ul>
