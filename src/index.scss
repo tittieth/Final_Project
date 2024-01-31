@@ -80,6 +80,7 @@ h3 {
   font-size: clamp(1.125rem, 0.75rem + 2vw, 2.5rem);
 }
 
-p {
+p,
+a {
   font-size: clamp(1rem, 0.7614rem + 1.2727vw, 1.875rem);
 }

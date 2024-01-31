@@ -42,5 +42,12 @@
 @media screen and (min-width: 768px) {
   .about-wrapper {
     margin: auto;
+
+    section {
+      .tech-icon {
+        width: 35px;
+        height: 35px;
+      }
+    }
   }
 }
