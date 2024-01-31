@@ -1,5 +1,6 @@
 const GoodJob = () => {
-  const name = localStorage.getItem('name') || '';
+  const nameFromLs = localStorage.getItem('name') || '';
+  const name = JSON.parse(nameFromLs);
 
   console.log(name);
 
