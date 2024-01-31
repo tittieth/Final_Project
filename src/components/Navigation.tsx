@@ -29,7 +29,7 @@ const Navigation = () => {
           </Link>
         </li>
         <li>
-          <Link to="/info" aria-label="Info">
+          <Link to="/about" aria-label="Info">
             <FontAwesomeIcon icon={faCircleInfo} className="nav-icon" />
           </Link>
         </li>
