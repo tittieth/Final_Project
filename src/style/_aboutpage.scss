@@ -32,7 +32,7 @@
         flex: 0 0 33.333333%;
 
         p {
-          font-size: 0.7rem;
+          font-size: clamp(0.625rem, 0.4545rem + 0.9091vw, 1.25rem);
         }
       }
     }
