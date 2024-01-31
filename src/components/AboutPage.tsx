@@ -10,9 +10,9 @@ import formikIcon from '/tech-icons/emojipng.com-10246054.png';
 
 const AboutPage = () => {
   return (
-    <div>
+    <div className="about-wrapper">
       <section>
-        <h2>Om projektet</h2>
+        <h1>Om projektet</h1>
         <p>
           Superklädhjälten är en interaktiv webbapplikation som hjälper barn att välja rätt kläder baserat på aktuella
           väderförhållanden. Den är skapad inom ramen av mitt examensarbete som front end developer på Medieinstitutet.
@@ -23,40 +23,40 @@ const AboutPage = () => {
         <ul>
           <li>
             <span>
-              <FontAwesomeIcon icon={faReact} />
+              <FontAwesomeIcon icon={faReact} className="tech-icon" />
             </span>
             <p>React</p>
           </li>
           <li>
             <span>
-              <img src={typeScriptIcon} alt="" />
+              <img className="tech-icon" src={typeScriptIcon} alt="" />
             </span>
             <p>TypeScript</p>
           </li>
           <li>
             <span>
-              <FontAwesomeIcon icon={faSass} />
+              <FontAwesomeIcon icon={faSass} className="tech-icon" />
             </span>
             <p>Scss</p>
           </li>
           <li>
-            <img src={viteIcon} alt="" />
+            <img className="tech-icon" src={viteIcon} alt="" />
             <p>Vite</p>
           </li>
           <li>
-            <img src={reactRouterIcon} alt="" />
+            <img className="tech-icon" src={reactRouterIcon} alt="" />
             <p>React Router</p>
           </li>
           <li>
-            <img src={formikIcon} alt="" />
+            <img className="tech-icon" src={formikIcon} alt="" />
             <p>Formik</p>
           </li>
           <li>
-            <img src={axiosIcon} alt="" />
+            <img className="tech-icon" src={axiosIcon} alt="" />
             <p>Axios</p>
           </li>
           <li>
-            <img src={openWeatherIcon} alt="" />
+            <img className="tech-icon" src={openWeatherIcon} alt="" />
             <p>OpenWeatherMap Api</p>
           </li>
         </ul>
@@ -69,7 +69,7 @@ const AboutPage = () => {
       <section>
         <h2>Tittie Thomasson</h2>
         <Link to="https://www.linkedin.com/in/tittie-thomasson/">
-          <FontAwesomeIcon icon={faLinkedin} />
+          <FontAwesomeIcon icon={faLinkedin} className="tech-icon" />
         </Link>
       </section>
     </div>
