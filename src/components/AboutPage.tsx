@@ -63,7 +63,7 @@ const AboutPage = () => {
       </section>
       <section>
         <h2>Övrigt</h2>
-        <p>Läs mer om projektet och ta del av koden på min</p>
+        <p>Läs mer om projektet och ta del av koden på</p>
         <Link to="https://github.com/tittieth/Final_Project" target="_blank">
           GitHub
         </Link>

@@ -4,7 +4,8 @@
   justify-content: space-around;
   padding: 1em;
 
-  h1 {
+  h1,
+  h2 {
     padding: 0 0 0.5rem 0;
   }
 
@@ -12,8 +13,8 @@
     margin: 1rem 0;
 
     .tech-icon {
-      width: 35px;
-      height: 35px;
+      width: 30px;
+      height: 30px;
     }
   }
 
