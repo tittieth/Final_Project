@@ -1,6 +1,6 @@
 const GoodJob = () => {
-  const nameFromLs = localStorage.getItem('name') || '';
-  const name = JSON.parse(nameFromLs);
+  const nameFromLs = JSON.parse(localStorage.getItem('name') ?? 'null');
+  const name = nameFromLs ? nameFromLs.charAt(0).toUpperCase() + nameFromLs.slice(1) : null;
 
   console.log(name);
 
