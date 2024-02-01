@@ -34,10 +34,16 @@ const Home = () => {
       <h1>
         <span>S</span>uperklädhjälten
       </h1>
-      <img className="rain-cloud" src="/weather-icons/shower-rain.png" alt="rain cloud" width={200} height={200} />
+      <img
+        className="rain-cloud"
+        src="/Final_Project/weather-icons/shower-rain.png"
+        alt="rain cloud"
+        width={200}
+        height={200}
+      />
       <img
         className="running-boy"
-        src="/img/3d-boy-in-superhero-cape-running.png"
+        src="/Final_Project/img/3d-boy-in-superhero-cape-running.png"
         alt="3d boy in superhero cape running"
         width={230}
         height={230}
