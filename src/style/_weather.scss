@@ -10,10 +10,17 @@
     margin: 20px;
   }
 
-  .clothing-cards-wrapper {
+  .clothing-cards-wrapper,
+  .accessories-cards-wrapper {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-around;
+  }
+
+  .clothes-wrapper {
+    display: flex;
+
+    flex-direction: column;
   }
 }
 
@@ -31,6 +38,15 @@
     h1 {
       margin: 0 0 20px;
     }
+
+    .clothes-wrapper {
+      flex-direction: row;
+
+      .clothing-cards-wrapper,
+      .accessories-cards-wrapper {
+        flex-direction: row;
+      }
+    }
   }
 
   .error-message {
@@ -42,8 +58,5 @@
 @media screen and (min-width: 992px) {
   .wrapper {
     margin: auto;
-    .clothing-cards-wrapper {
-      flex-wrap: nowrap;
-    }
   }
 }
