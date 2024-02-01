@@ -1,0 +1,62 @@
+@import '../style/variables.scss';
+
+.wrapper {
+  padding: 1em;
+  h1 {
+    margin: 0 0 20px 0;
+  }
+
+  h3 {
+    margin: 20px;
+  }
+
+  .clothing-cards-wrapper,
+  .accessories-cards-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .clothes-wrapper {
+    display: flex;
+
+    flex-direction: column;
+  }
+}
+
+.error-message {
+  background-color: rgba($almost-white, 0.35);
+  margin: 40px 10px 0;
+  padding: 2em;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    margin: auto;
+
+    h1 {
+      margin: 0 0 20px;
+    }
+
+    .clothes-wrapper {
+      flex-direction: row;
+
+      .clothing-cards-wrapper,
+      .accessories-cards-wrapper {
+        flex-direction: row;
+      }
+    }
+  }
+
+  .error-message {
+    width: 70%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .wrapper {
+    margin: auto;
+  }
+}

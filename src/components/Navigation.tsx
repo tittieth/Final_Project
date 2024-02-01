@@ -1,10 +1,17 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faCloudSun, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faCloudSun, faEnvelope, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 
 const Navigation = () => {
   return (
     <nav>
+      <img
+        className="logo"
+        src="/img/logo-superkladhjalten.webp"
+        alt="a cloud with the text superklädhjälten"
+        width={90}
+        height={50}
+      />
       <ul>
         <li>
           <Link to="/" aria-label="Home">
@@ -19,6 +26,11 @@ const Navigation = () => {
         <li>
           <Link to="/contact" aria-label="Contact">
             <FontAwesomeIcon icon={faEnvelope} className="nav-icon" />
+          </Link>
+        </li>
+        <li>
+          <Link to="/about" aria-label="Info">
+            <FontAwesomeIcon icon={faCircleInfo} className="nav-icon" />
           </Link>
         </li>
       </ul>

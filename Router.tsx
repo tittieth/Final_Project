@@ -5,6 +5,7 @@ import Home from './src/components/Home';
 import Contact from './src/components/Contact';
 import Weather from './src/components/Weather';
 import GoodJob from './src/components/GoodJob';
+import AboutPage from './src/components/AboutPage';
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
       {
         path: '/goodjob',
         element: <GoodJob />,
+      },
+      {
+        path: '/about',
+        element: <AboutPage />,
       },
     ],
   },

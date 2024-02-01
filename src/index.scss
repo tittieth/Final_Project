@@ -26,7 +26,6 @@ a:hover {
 body {
   margin: 0;
   min-width: 320px;
-  min-height: 100vh;
   scroll-behavior: smooth;
   position: relative;
 }
@@ -67,4 +66,21 @@ button:disabled {
   color: $error;
   font-size: 0.75rem;
   text-align: left;
+}
+
+h1 {
+  font-size: clamp(1.25rem, 0.7727rem + 2.5455vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.125rem, 0.8864rem + 1.2727vw, 2rem);
+}
+
+h3 {
+  font-size: clamp(1.125rem, 0.75rem + 2vw, 2.5rem);
+}
+
+p,
+a {
+  font-size: clamp(1rem, 0.9318rem + 0.3636vw, 1.25rem);
 }

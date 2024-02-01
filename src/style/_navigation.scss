@@ -1,0 +1,49 @@
+@import '../style/variables.scss';
+
+nav {
+  width: 100%;
+  background-color: $navy;
+  position: sticky;
+  bottom: 0;
+  right: 0;
+  margin-top: 2em;
+
+  .logo {
+    display: none;
+  }
+
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    .nav-icon {
+      height: 30px;
+      padding: 0.3em;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    position: absolute;
+    top: 0;
+    bottom: auto;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+
+    .logo {
+      display: block;
+      margin-left: 2rem;
+    }
+
+    ul {
+      justify-content: flex-end;
+    }
+
+    .nav-icon {
+      margin: 0.8rem 2rem;
+    }
+  }
+}

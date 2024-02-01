@@ -8,9 +8,10 @@
 
   h1 {
     font-family: 'Modak', system-ui;
+    font-size: clamp(1.5rem, 0.8182rem + 3.6364vw, 4rem);
 
     span {
-      font-size: 5.4rem;
+      font-size: clamp(5.4rem, 4.1455rem + 6.6909vw, 10rem);
     }
   }
 
@@ -33,7 +34,7 @@
     margin-top: 10px;
 
     label {
-      font-size: 0.8em;
+      font-size: clamp(0.625rem, 0.4545rem + 0.9091vw, 1.25rem);
       margin-bottom: 0.2em;
       margin-top: 0.5em;
     }
@@ -57,6 +58,31 @@
 
     button {
       margin: 10px 65px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home-wrapper {
+    width: 70%;
+    margin: auto;
+
+    .rain-cloud {
+      width: 250px;
+      height: 250px;
+      margin-left: 80px;
+      margin-top: -160px;
+      margin-bottom: 25px;
+      z-index: -1;
+    }
+
+    .running-boy {
+      width: 300px;
+      height: 300px;
+    }
+
+    form > button {
+      margin: 10px 100px;
     }
   }
 }
