@@ -13,7 +13,7 @@ const Home = () => {
   const getFromLs: string | null = localStorage.getItem('name');
   const initialValue = JSON.parse(getFromLs || 'null') || '';
 
-  const onSubmit = async (values: FormValues, actions: FormikHelpers<FormValues>) => {
+  const onSubmit = async (values: FormValues) => {
     localStorage.setItem('name', JSON.stringify(values.name));
     navigate('/weather');
   };
