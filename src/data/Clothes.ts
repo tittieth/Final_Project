@@ -47,7 +47,7 @@ const clothesData: IClothingItem[] = [
     description: 'Vindfleece',
     image: '/img-clothes/vindfleece.webp',
     weatherCondition: ['clouds', 'clear'],
-    temperature: (temperature: number) => temperature > 10 && temperature < 22,
+    temperature: (temperature: number) => temperature > 10 && temperature < 20,
   },
   {
     id: 7,

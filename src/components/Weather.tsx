@@ -22,32 +22,29 @@ const Weather = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        navigator.geolocation.getCurrentPosition(
-          async (position) => {
-            const { latitude, longitude } = position.coords;
-            console.log('lat' + latitude);
-            console.log('lon' + longitude);
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          const { latitude, longitude } = position.coords;
 
+          try {
             const data = await WeatherService.getWeather(latitude, longitude);
             console.log(data);
             setWeatherData(data);
             setTemperature(Math.round(data.main.temp));
             setWeatherCondition(data.weather[0].main.toLowerCase());
-          },
-          (error) => {
-            console.error(error);
+          } catch (error) {
             setErrorMsg(
-              'Oops! Det verkar som att vi behöver tillgång till din plats för att ge dig den bästa upplevelsen. För att fortsätta, snälla tillåt platsåtkomst i din webbläsare. Klicka på det lilla hänglåset bredvid webbadressen och välj "Tillåt platsåtkomst". Tack!'
+              'Oops! Vi kunde tyvärr inte hämta aktuell väderinformation just nu. Det kan bero på tillfälliga tekniska problem. Vänligen försök igen senare. Om problemet kvarstår, kontrollera din internetanslutning eller så kan det vara ett tillfälligt fel med vår tjänsteleverantör. Vi ber om ursäkt för eventuella besvär.'
             );
           }
-        );
-      } catch (error) {
-        console.log('error' + error);
-        setErrorMsg(
-          'Oops! Vi kunde tyvärr inte hämta aktuell väderinformation just nu. Det kan bero på tillfälliga tekniska problem. Vänligen försök igen senare. Om problemet kvarstår, kontrollera din internetanslutning eller så kan det vara ett tillfälligt fel med vårt tjänsteleverantör. Vi ber om ursäkt för eventuella besvär.'
-        );
-      }
+        },
+        (error) => {
+          console.error(error);
+          setErrorMsg(
+            'Oops! Det verkar som att vi behöver tillgång till din plats för att ge dig den bästa upplevelsen. För att fortsätta, snälla tillåt platsåtkomst i din webbläsare. Klicka på det lilla hänglåset bredvid webbadressen och välj "Tillåt platsåtkomst". Tack!'
+          );
+        }
+      );
     };
     fetchData();
   }, []);
