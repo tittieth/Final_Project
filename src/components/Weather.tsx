@@ -71,6 +71,10 @@ const Weather = () => {
     return recommendedClothes;
   };
 
+  const getRecommendedClothesByCategory = (category: string): IClothingItem[] => {
+    return getRecommendedClothes().filter((item) => item.category === category);
+  };
+
   const handleClothesChange = (checked: boolean) => {
     setCheckedClothes((prevCheckedClothes) => (checked ? prevCheckedClothes + 1 : prevCheckedClothes));
   };
@@ -107,7 +111,7 @@ const Weather = () => {
           <h1>Hej {user}!</h1>
           <WeatherCard weatherData={weatherData}></WeatherCard>
           <h3>Du behöver klä på dig:</h3>
-          <div className="clothing-cards-wrapper">
+          {/* <div className="clothing-cards-wrapper">
             {getRecommendedClothes().map((item: IClothingItem) => (
               <ClothingDisplay
                 key={item.id}
@@ -115,6 +119,39 @@ const Weather = () => {
                 onClothesChange={handleClothesChange}
               ></ClothingDisplay>
             ))}
+          </div> */}
+          <div className="clothes-wrapper">
+            <div className="clothing-cards-wrapper">
+              {getRecommendedClothesByCategory('clothes').map((item: IClothingItem) => (
+                <ClothingDisplay
+                  key={item.id}
+                  clothingItem={item}
+                  onClothesChange={handleClothesChange}
+                ></ClothingDisplay>
+              ))}
+            </div>
+
+            {/* Skor */}
+            <div className="shoes-cards-wrapper">
+              {getRecommendedClothesByCategory('shoes').map((item: IClothingItem) => (
+                <ClothingDisplay
+                  key={item.id}
+                  clothingItem={item}
+                  onClothesChange={handleClothesChange}
+                ></ClothingDisplay>
+              ))}
+            </div>
+
+            {/* Accessoarer */}
+            <div className="accessories-cards-wrapper">
+              {getRecommendedClothesByCategory('accessories').map((item: IClothingItem) => (
+                <ClothingDisplay
+                  key={item.id}
+                  clothingItem={item}
+                  onClothesChange={handleClothesChange}
+                ></ClothingDisplay>
+              ))}
+            </div>
           </div>
         </div>
       </>
