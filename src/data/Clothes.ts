@@ -1,8 +1,9 @@
-import IClothingItem from '../models/IClothing';
+import IClothingItem, { ClothingCategory } from '../models/IClothing';
 
 const clothesData: IClothingItem[] = [
   {
     id: 1,
+    category: ClothingCategory.CLOTHES,
     description: 'Regnkläder',
     image: '/img-clothes/regnkläder.webp',
     weatherCondition: 'rain',
@@ -10,6 +11,7 @@ const clothesData: IClothingItem[] = [
   },
   {
     id: 2,
+    category: ClothingCategory.SHOES,
     description: 'Gummistövlar',
     image: '/img-clothes/gummistövel.webp',
     weatherCondition: 'rain',
@@ -17,6 +19,7 @@ const clothesData: IClothingItem[] = [
   },
   {
     id: 3,
+    category: ClothingCategory.CLOTHES,
     description: 'Overall',
     image: '/img-clothes/overall.webp',
     weatherCondition: ['snow', 'clear', 'clouds'],
@@ -24,6 +27,7 @@ const clothesData: IClothingItem[] = [
   },
   {
     id: 4,
+    category: ClothingCategory.SHOES,
     description: 'Sandal',
     image: '/public/img-clothes/sandal.jpg',
     weatherCondition: ['clear', 'clouds'],
@@ -31,6 +35,7 @@ const clothesData: IClothingItem[] = [
   },
   {
     id: 5,
+    category: ClothingCategory.ACCESSORIES,
     description: 'Tjocka Vantar',
     image: '/img-clothes/vintervantar.webp',
     weatherCondition: ['clouds', 'snow', 'clear'],
@@ -38,6 +43,7 @@ const clothesData: IClothingItem[] = [
   },
   {
     id: 6,
+    category: ClothingCategory.CLOTHES,
     description: 'Vindfleece',
     image: '/img-clothes/vindfleece.webp',
     weatherCondition: ['clouds', 'clear'],
@@ -45,6 +51,7 @@ const clothesData: IClothingItem[] = [
   },
   {
     id: 7,
+    category: ClothingCategory.ACCESSORIES,
     description: 'Keps',
     image: '/img-clothes/keps.webp',
     weatherCondition: ['clouds', 'clear', 'rain'],
@@ -52,6 +59,7 @@ const clothesData: IClothingItem[] = [
   },
   {
     id: 8,
+    category: ClothingCategory.ACCESSORIES,
     description: 'Regnvantar',
     image: '/img-clothes/regnvantar.webp',
     weatherCondition: 'rain',
@@ -59,6 +67,7 @@ const clothesData: IClothingItem[] = [
   },
   {
     id: 9,
+    category: ClothingCategory.CLOTHES,
     description: 'Skaljacka',
     image: '/img-clothes/skaljacka.webp',
     weatherCondition: ['clouds', 'clear'],
@@ -66,6 +75,7 @@ const clothesData: IClothingItem[] = [
   },
   {
     id: 10,
+    category: ClothingCategory.SHOES,
     description: 'Kängor',
     image: '/img-clothes/skor.webp',
     weatherCondition: ['clouds', 'clear'],
@@ -73,6 +83,7 @@ const clothesData: IClothingItem[] = [
   },
   {
     id: 11,
+    category: ClothingCategory.ACCESSORIES,
     description: 'Tunn mössa',
     image: '/img-clothes/tunnmössa.webp',
     weatherCondition: ['clouds', 'rain'],
@@ -80,6 +91,7 @@ const clothesData: IClothingItem[] = [
   },
   {
     id: 12,
+    category: ClothingCategory.CLOTHES,
     description: 'Vinterjacka',
     image: '/img-clothes/vinterjacka.webp',
     weatherCondition: ['clouds', 'clear'],
@@ -87,6 +99,7 @@ const clothesData: IClothingItem[] = [
   },
   {
     id: 13,
+    category: ClothingCategory.ACCESSORIES,
     description: 'Tjock mössa',
     image: '/img-clothes/vintermössa.webp',
     weatherCondition: ['clouds', 'snow', 'rain'],
@@ -94,6 +107,7 @@ const clothesData: IClothingItem[] = [
   },
   {
     id: 14,
+    category: ClothingCategory.CLOTHES,
     description: 'Överdragsbyxor',
     image: '/public/img-clothes/överdragsbyxor.webp',
     weatherCondition: ['clouds', 'clear'],
@@ -101,6 +115,7 @@ const clothesData: IClothingItem[] = [
   },
   {
     id: 15,
+    category: ClothingCategory.ACCESSORIES,
     description: 'Tunna vantar',
     image: '/img-clothes/tunna-vantar.webp',
     weatherCondition: ['clouds', 'clear'],
@@ -108,6 +123,7 @@ const clothesData: IClothingItem[] = [
   },
   {
     id: 16,
+    category: ClothingCategory.SHOES,
     description: 'Vinterstövlar',
     image: '/public/img-clothes/vinterstövel.jpg',
     weatherCondition: ['clouds', 'clear', 'snow'],
@@ -115,6 +131,7 @@ const clothesData: IClothingItem[] = [
   },
   {
     id: 17,
+    category: ClothingCategory.SHOES,
     description: 'Gympaskor',
     image: '/public/img-clothes/sneakers.jpg',
     weatherCondition: ['clouds', 'clear'],
