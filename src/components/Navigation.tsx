@@ -7,7 +7,7 @@ const Navigation = () => {
     <nav>
       <img
         className="logo"
-        src="/img/logo-superkladhjalten.webp"
+        src="/Final_Project/img/logo-superkladhjalten.webp"
         alt="a cloud with the text superklädhjälten"
         width={90}
         height={50}

@@ -4,7 +4,7 @@ const Error = () => {
       <h1>Vilse?</h1>
       <div>
         <img
-          src="/img/boy-with-umbrella.png"
+          src="/Final_Project/img/boy-with-umbrella.png"
           alt="3d boy walking with an umbrella"
           width={150}
           height={250}

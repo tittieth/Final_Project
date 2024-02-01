@@ -28,7 +28,6 @@ const Weather = () => {
 
           try {
             const data = await WeatherService.getWeather(latitude, longitude);
-            console.log(data);
             setWeatherData(data);
             setTemperature(Math.round(data.main.temp));
             setWeatherCondition(data.weather[0].main.toLowerCase());
@@ -75,8 +74,6 @@ const Weather = () => {
   const handleClothesChange = (checked: boolean) => {
     setCheckedClothes((prevCheckedClothes) => (checked ? prevCheckedClothes + 1 : prevCheckedClothes));
   };
-  console.log(checkedClothes + 'from handleclothes');
-  console.log(totalClothes + 'from handleclothes');
 
   useEffect(() => {
     if (checkedClothes > 0 && checkedClothes === totalClothes) {
@@ -108,15 +105,7 @@ const Weather = () => {
           <h1>Hej {user}!</h1>
           <WeatherCard weatherData={weatherData}></WeatherCard>
           <h3>Du behöver klä på dig:</h3>
-          {/* <div className="clothing-cards-wrapper">
-            {getRecommendedClothes().map((item: IClothingItem) => (
-              <ClothingDisplay
-                key={item.id}
-                clothingItem={item}
-                onClothesChange={handleClothesChange}
-              ></ClothingDisplay>
-            ))}
-          </div> */}
+          {/* Klädesplagg */}
           <div className="clothes-wrapper">
             <div className="clothing-cards-wrapper">
               {getRecommendedClothesByCategory('clothes').map((item: IClothingItem) => (

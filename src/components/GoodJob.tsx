@@ -2,8 +2,6 @@ const GoodJob = () => {
   const nameFromLs = JSON.parse(localStorage.getItem('name') ?? 'null');
   const name = nameFromLs ? nameFromLs.charAt(0).toUpperCase() + nameFromLs.slice(1) : null;
 
-  console.log(name);
-
   return (
     <>
       <div className="goodjob-wrapper">
@@ -11,7 +9,7 @@ const GoodJob = () => {
         <div className="star-wrapper">
           <img
             className="star-one"
-            src="/img/casual-life-3d-yellow-star.png"
+            src="/Final_Project/img/casual-life-3d-yellow-star.png"
             alt="casual-life-3d-yellow-star.png"
             width={50}
             height={50}

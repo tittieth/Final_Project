@@ -14,9 +14,6 @@ const Home = () => {
   const initialValue = JSON.parse(getFromLs || 'null') || '';
 
   const onSubmit = async (values: FormValues, actions: FormikHelpers<FormValues>) => {
-    console.log(values);
-    console.log(actions);
-    console.log('Form submitted:', values.name);
     localStorage.setItem('name', JSON.stringify(values.name));
     navigate('/weather');
   };
