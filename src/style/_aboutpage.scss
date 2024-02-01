@@ -18,6 +18,10 @@
     }
   }
 
+  section:first-child {
+    max-width: 1000px;
+  }
+
   section:nth-child(2) {
     ul {
       display: flex;
