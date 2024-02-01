@@ -30,7 +30,34 @@ describe('weather page', () => {
     cy.get('h1').should('contain', 'Hej');
     cy.get('h3').should('have.text', 'Du behöver klä på dig:');
 
-    cy.get('.clothing-cards-wrapper').children().should('have.length.greaterThan', 0);
+    cy.get('.clothes-wrapper').children().should('have.length.greaterThan', 0);
+  });
+
+  it('should get mockdata', () => {
+    cy.visit('/weather');
+    cy.intercept('GET', 'https://api.openweathermap.org/data/2.5/weather*', { fixture: 'OpenWeatherResponse' }).as(
+      'apiCall'
+    );
+    cy.wait('@apiCall');
+
+    cy.get('h1').should('contain', 'Hej');
+    cy.get('h2').should('contain', 'San Francisco');
+    cy.get('h3').should('have.text', 'Du behöver klä på dig:');
+
+    cy.get('.clothes-wrapper').children().should('have.length.greaterThan', 0);
+  });
+
+  it('should display error message on failed API call', () => {
+    cy.visit('/weather');
+
+    cy.intercept('GET', 'https://api.openweathermap.org/data/2.5/weather*', {
+      fixture: 'emptyResponse',
+    }).as('apiCall');
+    cy.wait('@apiCall');
+
+    cy.get('.error-message p')
+      .should('be.visible')
+      .contains('Oops! Vi kunde tyvärr inte hämta aktuell väderinformation just nu.');
   });
 });
 
@@ -56,7 +83,5 @@ describe('contact form', () => {
     cy.get('input[name="email"]').type('johndoe@email.com');
     cy.get('textarea[name="message"]').type('Test message');
     cy.get('button[type="submit"]').click();
-    // cy.wait(2000)
-    // cy.get('.confirmation-modal').children().should('have.text', 'Tack för ditt mejl! Vi kommer att höra av oss.')
   });
 });
