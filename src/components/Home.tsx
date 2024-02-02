@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
-import { FormikHelpers } from 'formik';
 import { validationSchemaName } from '../models/ValidationSchema';
 
 type FormValues = {

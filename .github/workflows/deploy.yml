@@ -5,6 +5,11 @@ on:
     branches:
       - main
 
+#Allow repo secrets
+env:
+  VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
+
+
 jobs:
   build:
     name: Build
@@ -24,8 +29,6 @@ jobs:
 
       - name: Build project
         run: npm run build
-        env: 
-        VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
