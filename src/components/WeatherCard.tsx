@@ -18,10 +18,9 @@ const WeatherCard = ({ weatherData }: Props) => {
   return (
     <div className="card-wrapper">
       <h2>Vädret i {weatherData.name}:</h2>
-      {/* <h3>{weatherData.weather[0].main}</h3> */}
       <img
         className="weather-icon"
-        src={`/weather-icons/${customIcon}`}
+        src={`/Final_Project/weather-icons/${customIcon}`}
         alt={weatherData.weather[0].description}
         height={60}
         width={60}

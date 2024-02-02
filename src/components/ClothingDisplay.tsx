@@ -14,7 +14,7 @@ const ClothingDisplay: React.FC<ClothingProps> = ({ clothingItem, onClothesChang
     onClothesChange(!checked);
     console.log(id);
   };
-  console.log(checked);
+
   return (
     <div key={clothingItem.id} className="clothing-wrapper">
       <input type="checkbox" checked={checked} onChange={() => handleChange(clothingItem.id)} />

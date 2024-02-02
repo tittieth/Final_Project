@@ -14,10 +14,7 @@ export type FormValues = {
 const Contact = () => {
   const [confirmation, setConfirmation] = useState(false);
   const onSubmit = async (values: FormValues, actions: FormikHelpers<FormValues>) => {
-    console.log(values);
-    console.log(actions);
     await submitForm(values);
-    console.log('Form submitted:', values);
     setConfirmation(true);
     actions.resetForm();
   };
@@ -30,9 +27,6 @@ const Contact = () => {
     validationSchema: validationSchemaContactForm,
     onSubmit,
   });
-
-  console.log(values);
-  console.log('errors' + errors);
 
   return (
     <>
@@ -87,7 +81,7 @@ const Contact = () => {
         <div className="contact-img-wrapper">
           <img
             className="contact-img"
-            src="/img/casual-life-3d-young-woman-in-headphones-sitting-in-front-of-laptop-and-waving.png"
+            src="/Final_Project/img/casual-life-3d-young-woman-in-headphones-sitting-in-front-of-laptop-and-waving.png"
             alt="3d woman in headphones sitting in front of laptop"
             width={130}
             height={130}

@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
-import { FormikHelpers } from 'formik';
 import { validationSchemaName } from '../models/ValidationSchema';
 
 type FormValues = {
@@ -13,10 +12,7 @@ const Home = () => {
   const getFromLs: string | null = localStorage.getItem('name');
   const initialValue = JSON.parse(getFromLs || 'null') || '';
 
-  const onSubmit = async (values: FormValues, actions: FormikHelpers<FormValues>) => {
-    console.log(values);
-    console.log(actions);
-    console.log('Form submitted:', values.name);
+  const onSubmit = async (values: FormValues) => {
     localStorage.setItem('name', JSON.stringify(values.name));
     navigate('/weather');
   };
@@ -34,10 +30,16 @@ const Home = () => {
       <h1>
         <span>S</span>uperklädhjälten
       </h1>
-      <img className="rain-cloud" src="/weather-icons/shower-rain.png" alt="rain cloud" width={200} height={200} />
+      <img
+        className="rain-cloud"
+        src="/Final_Project/weather-icons/shower-rain.png"
+        alt="rain cloud"
+        width={200}
+        height={200}
+      />
       <img
         className="running-boy"
-        src="/img/3d-boy-in-superhero-cape-running.png"
+        src="/Final_Project/img/3d-boy-in-superhero-cape-running.png"
         alt="3d boy in superhero cape running"
         width={230}
         height={230}
