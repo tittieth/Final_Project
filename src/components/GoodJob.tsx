@@ -13,10 +13,11 @@ const GoodJob = () => {
             alt="casual-life-3d-yellow-star.png"
             width={50}
             height={50}
+            loading="lazy"
           />
           <img
             className="star-two"
-            src="/img/casual-life-3d-yellow-star.png"
+            src="/Final_Project//img/casual-life-3d-yellow-star.png"
             alt="casual-life-3d-yellow-star.png"
             width={50}
             height={50}
@@ -24,7 +25,7 @@ const GoodJob = () => {
           />
           <img
             className="star-three"
-            src="img/casual-life-3d-yellow-star.png"
+            src="/Final_Project/img/casual-life-3d-yellow-star.png"
             alt="casual-life-3d-yellow-star.png"
             width={50}
             height={50}
@@ -32,7 +33,7 @@ const GoodJob = () => {
           />
           <img
             className="star-four"
-            src="/img/casual-life-3d-yellow-star.png"
+            src="/Final_Project/img/casual-life-3d-yellow-star.png"
             alt="casual-life-3d-yellow-star.png"
             width={50}
             height={50}
