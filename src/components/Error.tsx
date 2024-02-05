@@ -1,4 +1,12 @@
+import { useNavigate } from 'react-router-dom';
+
 const Error = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/weather');
+  };
+
   return (
     <div className="error-wrapper">
       <h1>Vilse?</h1>
@@ -14,8 +22,9 @@ const Error = () => {
       <div>
         <p>
           Vi kunde inte hitta sidan du försökte nå. Det kan bero på att sidan har flyttats eller att vi har tagit bort
-          den. Använd menyn nedan för att ta dig tillbaka.
+          den.
         </p>
+        <button onClick={handleClick}>Tillbaka till vädersidan</button>
       </div>
     </div>
   );
