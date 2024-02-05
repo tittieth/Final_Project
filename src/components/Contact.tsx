@@ -45,7 +45,7 @@ const Contact = () => {
               className={errors.name && touched.name ? 'input-error' : ''}
             />
           </label>
-          <div className="error">{errors.name && touched.name && <p>{errors.name}</p>}</div>
+          {errors.name && touched.name && <p className="error">{errors.name}</p>}
 
           <label className="input-wrapper">
             Mejladress:
