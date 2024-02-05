@@ -10,7 +10,7 @@ const submitForm = async (formData: FormValues) => {
     });
     return response;
   } catch (error) {
-    console.error(error);
+    alert(error);
     throw new Error('Något gick fel. Försök igen');
   }
 };

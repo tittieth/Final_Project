@@ -85,8 +85,9 @@ const clothesData: IClothingItem[] = [
     id: 11,
     category: ClothingCategory.ACCESSORIES,
     description: 'Tunn mössa',
+    weatherCondition: ['clouds', 'rain', 'clear'],
     image: '/Final_Project/img-clothes/tunnmössa.webp',
-    weatherCondition: ['clouds', 'rain'],
+
     temperature: (temperature: number) => temperature >= 10 && temperature < 15,
   },
   {
@@ -101,8 +102,8 @@ const clothesData: IClothingItem[] = [
     id: 13,
     category: ClothingCategory.ACCESSORIES,
     description: 'Tjock mössa',
+    weatherCondition: ['clouds', 'snow', 'rain', 'clear'],
     image: '/Final_Project/img-clothes/vintermössa.webp',
-    weatherCondition: ['clouds', 'snow', 'rain'],
     temperature: (temperature: number) => temperature < 10,
   },
   {
