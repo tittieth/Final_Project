@@ -21,8 +21,8 @@ const Error = () => {
       </div>
       <div>
         <p>
-          Vi kunde inte hitta sidan du försökte nå. Det kan bero på att sidan har flyttats eller att vi har tagit bort
-          den.
+          Vi kunde tyvärr inte hitta sidan du försökte nå. Det kan bero på att sidan har flyttats eller att vi har tagit
+          bort den.
         </p>
         <button onClick={handleClick}>Tillbaka till vädersidan</button>
       </div>
