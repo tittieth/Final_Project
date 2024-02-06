@@ -8,9 +8,9 @@ const submitForm = async (formData: FormValues) => {
       email: formData.email,
       message: formData.message,
     });
+
     return response;
   } catch (error) {
-    alert(error);
     throw new Error('Något gick fel. Försök igen');
   }
 };

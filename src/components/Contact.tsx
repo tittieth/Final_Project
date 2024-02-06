@@ -13,10 +13,17 @@ export type FormValues = {
 
 const Contact = () => {
   const [confirmation, setConfirmation] = useState(false);
+  const [error, setError] = useState('');
+
   const onSubmit = async (values: FormValues, actions: FormikHelpers<FormValues>) => {
-    await submitForm(values);
-    setConfirmation(true);
-    actions.resetForm();
+    try {
+      await submitForm(values);
+      setConfirmation(true);
+      actions.resetForm();
+      setError('');
+    } catch (error) {
+      setError(error.message);
+    }
   };
   const { values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit } = useFormik<FormValues>({
     initialValues: {
@@ -77,6 +84,7 @@ const Contact = () => {
               Skicka
             </button>
           </div>
+          {error && <p className="error">{error}</p>}
         </form>
         <div className="contact-img-wrapper">
           <img
