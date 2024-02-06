@@ -16,13 +16,14 @@ const Contact = () => {
   const [error, setError] = useState('');
 
   const onSubmit = async (values: FormValues, actions: FormikHelpers<FormValues>) => {
+    setError('');
     try {
       await submitForm(values);
       setConfirmation(true);
       actions.resetForm();
-      setError('');
     } catch (error) {
       setError(error.message);
+      actions.setSubmitting(false);
     }
   };
   const { values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit } = useFormik<FormValues>({
