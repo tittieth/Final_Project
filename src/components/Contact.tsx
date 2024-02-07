@@ -21,7 +21,7 @@ const Contact = () => {
       await submitForm(values);
       setConfirmation(true);
       actions.resetForm();
-    } catch (error) {
+    } catch (error: any) {
       setError(error.message);
       actions.setSubmitting(false);
     }
