@@ -6,7 +6,7 @@ const clothesData: IClothingItem[] = [
     category: ClothingCategory.CLOTHES,
     description: 'Regnkläder',
     image: '/Final_Project/img-clothes/regnkläder.webp',
-    weatherCondition: 'rain',
+    weatherCondition: ['rain', 'drizzle'],
     temperature: (temperature: number) => temperature > 0 && temperature < 22,
   },
   {
@@ -14,7 +14,7 @@ const clothesData: IClothingItem[] = [
     category: ClothingCategory.SHOES,
     description: 'Gummistövlar',
     image: '/Final_Project/img-clothes/gummistövel.webp',
-    weatherCondition: 'rain',
+    weatherCondition: ['rain', 'drizzle'],
     temperature: (temperature: number) => temperature >= 0,
   },
   {
@@ -62,7 +62,7 @@ const clothesData: IClothingItem[] = [
     category: ClothingCategory.ACCESSORIES,
     description: 'Regnvantar',
     image: '/Final_Project/img-clothes/regnvantar.webp',
-    weatherCondition: 'rain',
+    weatherCondition: ['rain', 'drizzle'],
     temperature: (temperature: number) => temperature > 0 && temperature < 15,
   },
   {
