@@ -40,7 +40,7 @@ const Weather = () => {
         (error) => {
           console.error(error);
           setErrorMsg(
-            'Oops! Det verkar som att vi behöver tillgång till din plats för att ge dig den bästa upplevelsen. För att fortsätta, snälla tillåt platsåtkomst i din webbläsare. Klicka på det lilla hänglåset bredvid webbadressen och välj "Tillåt platsåtkomst". Tack!'
+            'Oops! Det verkar som att vi behöver tillgång till din plats för att ge dig den bästa upplevelsen. För att fortsätta, snälla tillåt platsåtkomst i din webbläsare. Klicka på det lilla hänglåset bredvid webbadressen och välj "Tillåt platsåtkomst". Observera: På mobila enheter kan det vara nödvändigt att också aktivera platstjänsten på själva enheten. Gå till inställningar -> integritet -> plats och se till att platstjänsten är aktiverad för den här webbplatsen.'
           );
         }
       );
