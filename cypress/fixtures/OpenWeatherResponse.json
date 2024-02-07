@@ -6,8 +6,8 @@
     "weather": [
       {
         "id": 801,
-        "main": "Clouds",
-        "description": "few clouds",
+        "main": "Drizzle",
+        "description": "drizzle rain",
         "icon": "02d"
       }
     ],

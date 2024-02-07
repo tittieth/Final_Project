@@ -33,16 +33,18 @@ const Home = () => {
       <img
         className="rain-cloud"
         src="/Final_Project/weather-icons/shower-rain.png"
+        srcSet="/Final_Project/weather-icons/shower-rain-200.png 200w, /Final_Project/weather-icons/shower-rain-250.png 250w"
+        sizes="(max-width: 700px) 200px,
+         250px"
         alt="rain cloud"
-        width={200}
-        height={200}
       />
       <img
         className="running-boy"
-        src="/Final_Project/img/3d-boy-in-superhero-cape-running.png"
+        src="/Final_Project/img/casual-life-3d-boy-in-superhero-cape-running.png"
+        srcSet="/Final_Project/img/casual-life-3d-boy-in-superhero-cape-running-230.png 230w, /Final_Project/img/casual-life-3d-boy-in-superhero-cape-running-300.png 300w"
+        sizes="(max-width: 700px) 230px,
+         300px"
         alt="3d boy in superhero cape running"
-        width={230}
-        height={230}
         loading="lazy"
       />
       <form onSubmit={handleSubmit}>

@@ -24,7 +24,7 @@ describe('start page', () => {
 
 describe('weather page', () => {
   it('successfully loads', () => {
-    cy.visit('/weather');
+    cy.visit('#/weather');
     cy.wait(4000);
 
     cy.get('h1').should('contain', 'Hej');
@@ -34,7 +34,7 @@ describe('weather page', () => {
   });
 
   it('should get mockdata', () => {
-    cy.visit('/weather');
+    cy.visit('#/weather');
     cy.intercept('GET', 'https://api.openweathermap.org/data/2.5/weather*', { fixture: 'OpenWeatherResponse' }).as(
       'apiCall'
     );
@@ -48,7 +48,7 @@ describe('weather page', () => {
   });
 
   it('should display error message on failed API call', () => {
-    cy.visit('/weather');
+    cy.visit('#/weather');
 
     cy.intercept('GET', 'https://api.openweathermap.org/data/2.5/weather*', {
       fixture: 'emptyResponse',
@@ -63,7 +63,7 @@ describe('weather page', () => {
 
 describe('good job page', () => {
   it('successfully loads', () => {
-    cy.visit('/goodjob');
+    cy.visit('#/goodjob');
     cy.get('h1').should('contain', 'Bra jobbat');
     cy.get('.star-wrapper').children().should('have.length', 4);
   });
@@ -71,14 +71,14 @@ describe('good job page', () => {
 
 describe('contact form', () => {
   it('successfully loads', () => {
-    cy.visit('/contact');
+    cy.visit('#/contact');
   });
   it('Should show title', () => {
-    cy.visit('/contact');
+    cy.visit('#/contact');
     cy.get('h1').should('have.text', 'Kontakt');
   });
   it('Should submit if form is valid', () => {
-    cy.visit('/contact');
+    cy.visit('#/contact');
     cy.get('input[name="name"]').type('John');
     cy.get('input[name="email"]').type('johndoe@email.com');
     cy.get('textarea[name="message"]').type('Test message');
