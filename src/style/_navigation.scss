@@ -7,6 +7,8 @@ nav {
   bottom: 0;
   right: 0;
   margin-top: 2em;
+  flex: 1;
+  order: 1;
 
   .logo {
     display: none;
@@ -26,12 +28,13 @@ nav {
 
 @media screen and (min-width: 768px) {
   nav {
-    position: absolute;
     top: 0;
     bottom: auto;
     margin-top: 0;
     display: flex;
     align-items: center;
+
+    order: -1;
 
     .logo {
       display: block;

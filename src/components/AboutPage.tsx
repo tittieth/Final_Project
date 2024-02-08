@@ -29,7 +29,14 @@ const AboutPage = () => {
           </li>
           <li>
             <span>
-              <img className="tech-icon" src={typeScriptIcon} alt="typescript icon" />
+              <img
+                className="tech-icon"
+                src={typeScriptIcon}
+                alt="typescript icon"
+                width={40}
+                height={40}
+                loading="lazy"
+              />
             </span>
             <p>TypeScript</p>
           </li>
@@ -40,23 +47,30 @@ const AboutPage = () => {
             <p>Scss</p>
           </li>
           <li>
-            <img className="tech-icon" src={viteIcon} alt="vite icon" />
+            <img className="tech-icon" src={viteIcon} alt="vite icon" width={40} height={40} loading="lazy" />
             <p>Vite</p>
           </li>
           <li>
-            <img className="tech-icon" src={reactRouterIcon} alt="react icon" />
+            <img className="tech-icon" src={reactRouterIcon} alt="react icon" width={40} height={40} loading="lazy" />
             <p>React Router</p>
           </li>
           <li>
-            <img className="tech-icon" src={formikIcon} alt="formik icon" />
+            <img className="tech-icon" src={formikIcon} alt="formik icon" width={40} height={40} loading="lazy" />
             <p>Formik</p>
           </li>
           <li>
-            <img className="tech-icon" src={axiosIcon} alt="axios icon" />
+            <img className="tech-icon" src={axiosIcon} alt="axios icon" width={40} height={40} loading="lazy" />
             <p>Axios</p>
           </li>
           <li>
-            <img className="tech-icon" src={openWeatherIcon} alt="openweather icon" />
+            <img
+              className="tech-icon"
+              src={openWeatherIcon}
+              alt="openweather icon"
+              width={40}
+              height={40}
+              loading="lazy"
+            />
             <p>OpenWeatherMap Api</p>
           </li>
         </ul>

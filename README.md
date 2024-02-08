@@ -26,5 +26,6 @@ Superklädhjälten är en interaktiv webbapplikation som hjälper barn att välj
 - Formik
 
 ## Demo
+<img src="/public/img/mobile (1).gif" width="40%">
 
 
