@@ -9,15 +9,14 @@ type ClothingProps = {
 const ClothingDisplay: React.FC<ClothingProps> = ({ clothingItem, onClothesChange }) => {
   const [checked, setChecked] = useState(false);
 
-  const handleChange = (id: number) => {
+  const handleChange = () => {
     setChecked(!checked);
     onClothesChange(!checked);
-    console.log(id);
   };
 
   return (
     <div key={clothingItem.id} className="clothing-wrapper">
-      <input type="checkbox" checked={checked} onChange={() => handleChange(clothingItem.id)} />
+      <input type="checkbox" checked={checked} onChange={handleChange} />
       <div className="img-wrapper">
         <img
           src={clothingItem.image}
