@@ -72,7 +72,7 @@ const Weather = () => {
   };
 
   const handleClothesChange = (checked: boolean) => {
-    setCheckedClothes((prevCheckedClothes) => (checked ? prevCheckedClothes + 1 : prevCheckedClothes));
+    setCheckedClothes((prevCheckedClothes) => (checked ? prevCheckedClothes + 1 : prevCheckedClothes - 1));
   };
 
   useEffect(() => {
